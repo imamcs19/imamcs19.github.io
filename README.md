@@ -13,7 +13,7 @@ Anggota:
 3. Dr. Lailil Muflikhah, S.Kom, M.Sc.
 
 Preview Header:
-![image]https://imamcs19.github.io/ai2021/assets/img/DRLC%20Environments.jpg
+![image](https://github.com/imamcs19/imamcs19.github.io/blob/main/Cover-Header.jpg)
 
 Preview PPT Materi:
 ![image](https://github.com/imamcs19/Smart-Big-Data-App-for-Determining-Modeling-of-Human-Genome-Virus-and-Medicinal-Compounds/blob/main/Cover%20PPT.png)
