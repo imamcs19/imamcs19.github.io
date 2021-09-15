@@ -11,3 +11,6 @@ Anggota:
 1. Imam Cholissodin, S.Si., M.Kom.
 2. Arief Andy Soebroto, S.T., M.Kom.
 3. Dr. Lailil Muflikhah, S.Kom, M.Sc.
+
+
+![image](https://github.com/imamcs19/Smart-Big-Data-App-for-Determining-Modeling-of-Human-Genome-Virus-and-Medicinal-Compounds/blob/main/Cover%20PPT.png)
