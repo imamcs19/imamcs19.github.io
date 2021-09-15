@@ -4,7 +4,7 @@ Judul: Pelatihan Budidaya Multi-Culture Farming Berbasis Teknologi Sistem Pakar 
 [>> Link Demo Pengmas 2021 <<](https://imamcs19.github.io/ai2021)
 
 Ketua:
-Ir. Sutrisno M.T. sbg Ketua  ✔
+Ir. Sutrisno M.T. ✔
 
 Anggota:
 1. Imam Cholissodin, S.Si., M.Kom.
