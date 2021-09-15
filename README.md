@@ -17,4 +17,4 @@ Preview Header:
 
 Preview PPT Materi:
 
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/Bp49uOYMNrk)
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/Bp49uOYMNrk)
