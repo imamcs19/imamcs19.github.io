@@ -17,5 +17,4 @@ Preview Header:
 
 Preview PPT Materi:
 
-Preview Video Edukasi di Youtube:
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/embed/Bp49uOYMNrk)
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://www.youtube.com/Bp49uOYMNrk)
