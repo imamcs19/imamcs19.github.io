@@ -20,5 +20,8 @@ Preview PPT Materi:
 [![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/Bp49uOYMNrk)
 
 
-BG via Zoom atau Gmeet:
+BG via Zoom atau Gmeet (mode 1):
 ![image](https://github.com/imamcs19/imamcs19.github.io/blob/main/BG-Pengmas%202021%20via%20Zoom%20atau%20Gmeet%20-%20Tipe%201.png)
+
+BG via Zoom atau Gmeet (mode 2):
+![image](https://github.com/imamcs19/imamcs19.github.io/blob/main/BG-Pengmas%202021%20via%20Zoom%20atau%20Gmeet%20-%20Tipe%202.png)
