@@ -69,7 +69,7 @@ function timer() {
   function pad(n) {
     return (n < 10 ? "0" + n : n);
   }
-  document.getElementById('countdown').innerHTML = "Countdown | " + pad(days) + " hari : " + pad(hours) + " jam : " + pad(minutes) + " menit : " + pad(remainingSeconds) + " detik";
+  document.getElementById('countdown').innerHTML = "Countdown | " + days + " hari : " + hours + " jam : " + minutes + " menit : " + remainingSeconds + " detik";
   if (seconds == 0) {
     clearInterval(countdownTimer);
     document.getElementById('countdown').innerHTML = "Countdown | 0 hari : 0 jam : 0 menit : 0 detik";
