@@ -70,7 +70,7 @@ function timer() {
     return (n < 10 ? "0" + n : n);
   }
   document.getElementById('countdown').innerHTML = "Countdown | " + days + " hari : " + hours + " jam : " + minutes + " menit : " + remainingSeconds + " detik";
-  if (seconds == 0) {
+  if (seconds == 0 || days < 0) {
     clearInterval(countdownTimer);
     document.getElementById('countdown').innerHTML = "Countdown | 0 hari : 0 jam : 0 menit : 0 detik";
   } else {
