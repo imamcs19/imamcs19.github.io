@@ -1,0 +1,54 @@
+.hilite1 { background-color: #FFFEDD;  }
+.hilite2 { background-color: #D1FFBB; }
+.hilite3 { background-color: #FFD5FE; }
+.hilite4 { background-color: #D9D5FF; }
+.hilite { background-color: #ff0; }
+
+#thearrayavatar img { width: 40px; height: 40px;}
+#top10 img { width: 36px; height: 36px;}
+
+
+a.external { color: magenta; font-size: 12px; }
+
+.tr1 {
+padding: 2.5px;
+background: #CCCCCC;
+border-bottom: 1px #666666 dotted;
+}
+
+.tr2, .hover1 {
+padding: 2.5px;
+background: #F7F7F7;
+border-bottom: 1px #CCCCCC solid;
+margin-top: 1px;
+}
+
+.tr2 a, .hover1 a {
+text-decoration: none !important;
+}
+
+/*.tr2:hover {
+background: #CCCCCC;
+}*/
+
+.snippet { font-size: 12px; }
+
+
+.thearray {
+	width: 100%;
+}
+
+.titles {
+	padding: 5px 7px;
+	font-size: 11px;
+	font-weight: bold;
+	letter-spacing: .5px;
+	color: #FFFFFF !important;
+	background: #4f6c84;
+	text-decoration: none !important;
+        -moz-border-radius: 1% 1% 0 0;
+}
+
+.titles a { color: #FFFFFF; }
+
+.darkrow2 { background-color: #F7F7F7; color:#000000; }

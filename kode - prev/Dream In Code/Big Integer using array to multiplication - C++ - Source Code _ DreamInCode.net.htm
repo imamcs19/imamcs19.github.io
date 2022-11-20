@@ -1,0 +1,1407 @@
+<html>
+<head><title>Big Integer using array to multiplication - C++ - Source Code | DreamInCode.net</title></head>
+	<meta name="robots" content="noodp"/>
+
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/favicon0.ico"/>
+
+	<link rel="alternate" title="dream.in.code Forums" href="/rss/featured.php" type="application/rss+xml"/>
+
+
+	<!-- OLD LAYOUT -->
+    <style type="text/css">
+      @import url("Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/styles_2.css");
+
+    </style>
+
+
+    <script type="text/javascript">
+      //<![CDATA[
+      function loginToggle() {
+        var target = document.getElementById("login").getElementsByTagName("div")[0];
+        !target.className.match(/ visible/) ? target.className += " visible" : target.className = target.className.replace(/ visible/, "");
+        }
+      //]]>
+    </script>   
+<!-- 		<table class="cs_promo">
+			<tr>
+				<td><a href="http://www.dreamincode.net/forums/index.php?showtopic=19383"><img src="http://www.dreamincode.net/code/themes/cs_promo.png" alt="Submit a Code Snippet and get a chance to win a &lt;/dream.in.code&gt; 1GB Thumb Drive!" /></a></td>
+			</tr>
+		</table> -->
+</head>
+<body>
+<span name="KonaFilter">
+    <table width="100%" id="header" cellpadding="0" cellspacing="0">
+	  <tr>
+		  <td valign="top">
+			  <h1 id="logo"><a href="http://www.dreamincode.net/"><img alt="&lt;/dream.in.code&gt;: Programming &amp; Web Development Community" width="264" height="110" src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/logo0000.gif"/></a></h1>
+		</td>
+		<td id="leaderboard" valign="top">
+			<script  src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/getjs000.js"></script><div id="beacon_148" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src='http://www.dreamincode.net/ads/adlog.php?bannerid=148&amp;clientid=75&amp;zoneid=23&amp;source=&amp;block=0&amp;capping=0&amp;cb=7edcbcfca47a995fe6f5007eac3c940b' width='0' height='0' alt='' style='width: 0px; height: 0px;'></div>		  </td>
+	  </tr>
+	  <tr>
+		  <td colspan="2" id="navigation-login-register" valign="top">
+				<ul class="navigation">
+				  <li class="first"><a href="http://www.dreamincode.net/">Home</a></li>
+				  <li><a href="http://www.dreamincode.net/forums/">Forums</a></li>
+				  <li><a href="http://www.dreamincode.net/forums/showforum76.htm">Programming</a></li>
+				  <li><a href="http://www.dreamincode.net/forums/showforum74.htm">Web Development</a></li>
+				  <li><a href="http://www.dreamincode.net/forums/showforum78.htm">Tutorials</a></li>
+				  <li><a href="http://www.dreamincode.net/code/">Snippets</a></li>
+				  <li><a href="http://www.dreamincode.net/forums/?automodule=blog">Blogs</a></li>
+				  <li><a rel="nofollow" href="http://jobs.dreamincode.net/"><span style="color: red;">Jobs</span></a></li>
+				  <li class="last"><a rel="nofollow" href="http://www.dreamincode.net/forums/showforum1.htm">Lounge</a></li>
+				</ul>
+				
+												<ul id="login-register">
+					<li id="login"><a rel="nofollow" href="http://www.dreamincode.net/forums/index.php?act=Login&amp;CODE=00">Login</a></li>
+			<li id="register"><a rel="nofollow" href="http://www.dreamincode.net/forums/index.php?act=Reg&amp;CODE=00">Join for Free!</a></li>
+			</ul>				
+
+		  </td>
+	  </tr>
+	</table>
+	</span>
+
+                   
+                     
+
+    <table width="100%" cellpadding="0" cellspacing="0">
+		<tr>
+			<td valign="top" class="column1">
+	<span name="KonaFilter">
+	<div class="navigation">
+	
+		<!-- google_ad_section_start(weight=ignore) -->	
+
+		
+		<h2><a href="http://www.dreamincode.net/forums/showforum76.htm">Programming Help</a></h2>
+			<ul class="navigation">			
+											 <li><a href="http://www.dreamincode.net/forums/showforum15.htm">C and C++</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum21.htm">Visual Basic</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum32.htm">Java</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum67.htm">VB.NET</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum84.htm">C#</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum30.htm">ASP.NET</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum28.htm">PHP</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum31.htm">ColdFusion</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum29.htm">Perl and Python</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum70.htm">Ruby</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum14.htm">Databases</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum62.htm">Other Languages</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum69.htm">Game Programming</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum82.htm">Software Development</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum83.htm">Industry News</a></li>
+										</ul>
+		
+		<h2><a href="http://www.dreamincode.net/forums/showforum74.htm">Web Development</a></h2>
+			<ul class="navigation">			
+											 <li><a href="http://www.dreamincode.net/forums/showforum63.htm">Web Development</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum4.htm">HTML &amp; CSS</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum90.htm">JavaScript</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum3.htm">Graphic Design</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum8.htm">Flash &amp; ActionScript</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum89.htm">Blogging</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum59.htm">SEO &amp; Advertising</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum88.htm">Web Servers &amp; Hosting</a></li>
+														 <li><a href="http://www.dreamincode.net/forums/showforum5.htm">Site Check</a></li>
+										</ul>
+
+<!-- google_ad_section_end -->		
+		
+		<script  src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/getjs001.js"></script><div id="beacon_149" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src='http://www.dreamincode.net/ads/adlog.php?bannerid=149&amp;clientid=75&amp;zoneid=6&amp;source=&amp;block=0&amp;capping=0&amp;cb=21da52c8630c5f042088bbf4a938716c' width='0' height='0' alt='' style='width: 0px; height: 0px;'></div>		<br />
+		<!-- google_ad_section_start(weight=ignore) -->
+
+		<h2>What's Here?</h2>
+                      <ul>               
+                      
+					  <li><b>Members:</b> 58,448</li>
+					  
+					  <li><b>Replies:</b> 283,611</li>
+                    
+					  <li><b>Topics:</b> 38,391</li>
+                     
+                      <li><b>Snippets:</b> 1,304</li>
+                    
+                      <li><b>Tutorials:</b> 283</li>
+					   
+                      <li><b>Total Online:</b> 1,241</li>
+                    
+                      <li><b>Members:</b> 50</li>
+                    
+                      <li><b>Guests:</b> 1,191</li>
+                    					
+						</ul>
+
+
+			<!-- google_ad_section_end -->		<br />
+		<!-- google_ad_section_start(weight=ignore) -->
+<h2>Who's Online?</h2>
+<ul>
+		<li><a rel="nofollow" href='http://www.dreamincode.net/forums/index.php?showuser=57113'>rhoisy</a></li>
+			<li><a rel="nofollow" href='http://www.dreamincode.net/forums/index.php?showuser=12634'><span style='color:#CC6633'>Louisda16th</span></a></li>
+			<li><a rel="nofollow" href='http://www.dreamincode.net/forums/index.php?showuser=58752'>annebar76</a></li>
+			<li><a rel="nofollow" href='http://www.dreamincode.net/forums/index.php?showuser=34'><span style='color:maroon; font-style: italic; font-weight: bold'>skyhawk133</span></a></li>
+			<li><a rel="nofollow" href='http://www.dreamincode.net/forums/index.php?showuser=30714'><span style='color:#CC6633'>ahmad_511</span></a></li>
+			<li><a rel="nofollow" href='http://www.dreamincode.net/forums/index.php?showuser=58680'>RauLiTo</a></li>
+			<li><a rel="nofollow" href='http://www.dreamincode.net/forums/index.php?showuser=10177'>tody4me</a></li>
+			<li><a rel="nofollow" href='http://www.dreamincode.net/forums/index.php?showuser=56733'>djkaotix</a></li>
+			<li><a rel="nofollow" href='http://www.dreamincode.net/forums/index.php?showuser=32303'><span style='color:#999933'>no2pencil</span></a></li>
+			<li><a rel="nofollow" href='http://www.dreamincode.net/forums/index.php?showuser=49253'>lockdown</a></li>
+			<li><a rel="nofollow" href='http://www.dreamincode.net/forums/index.php?showuser=25423'><span style='color:#999933'>supersssweety</span></a></li>
+			<li><a rel="nofollow" href='http://www.dreamincode.net/forums/index.php?showuser=1725'><span style='color:green; font-style: italic; font-weight: bold'>Amadeus</span></a></li>
+			<li><a rel="nofollow" href='http://www.dreamincode.net/forums/index.php?showuser=57637'>dllso5959</a></li>
+			<li><a rel="nofollow" href='http://www.dreamincode.net/forums/index.php?showuser=1217'><span style='color:#CC6633'>Fygar</span></a></li>
+			<li><a rel="nofollow" href='http://www.dreamincode.net/forums/index.php?showuser=47742'>Footsie</a></li>
+	</ul>
+<!-- google_ad_section_end -->
+	</div>
+	<img src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/spacer00.gif" width="160" height="1">
+	</span>
+
+
+			</td>
+			<td width="100%" valign="top" class="content">
+
+<br><div id="tehNav">
+	<span class="navPath"><span><img src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/nav00000.gif">&nbsp;<h1><a href="http://www.dreamincode.net/code/browse.php?cid=0">Code Snippets </a></h1>&nbsp;<img src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/nav00000.gif">&nbsp;<h1><a href="http://www.dreamincode.net/code/browse.php?cid=2">C++  Source Code</a></h1></span></span>
+	<br />
+	
+				<script type="text/javascript"><!--
+				google_ad_client = "pub-9822709549810875";
+				google_alternate_color = "FFFFFF";
+				google_ad_width = 468;
+				google_ad_height = 15;
+				google_ad_format = "468x15_0ads_al";
+				//2007-11-21: 468x60 Link Unit
+				google_ad_channel = "7272270574";
+				google_color_border = "FFFFFF";
+				google_color_bg = "FFFFFF";
+				google_color_link = "0000FF";
+				google_color_text = "000000";
+				google_color_url = "008000";
+				//-->
+				</script>
+				<script type="text/javascript"
+				  src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/show_ads.js">
+				</script>
+				<br/><br/>	
+
+				<span name="KonaFilter">
+				<table width="100%" border="0" cellspacing="0" cellpadding="4">
+						<tr> 
+						  <td colspan="3" class="titles"><strong>Welcome to Dream.In.Code</strong></td>
+						</tr>
+						<tr>
+							<td class="tr2" align="center" valign="middle">
+							<span><script language='JavaScript' type='text/javascript'><!--
+/* openads=http://www.dreamincode.net/ads bannerid=146 zoneid=18 source= */
+if (typeof phpAds_adg == 'undefined') {
+	document.write('<scr'+'ipt language="JavaScript" type="text/javascript" src="http://www.dreamincode.net/ads/adg.js"></scr'+'ipt>');
+}
+//--></script><script type="text/javascript"><!--
+google_ad_client = "pub-9822709549810875";
+google_ad_width = 336;
+google_ad_height = 280;
+google_ad_format = "336x280_as";
+google_ad_type = "text_image";
+//2007-11-23: 336x280 Default - Blue/Red
+google_ad_channel = "9446477501";
+google_color_border = "F7F7F7";
+google_color_bg = "F7F7F7";
+google_color_link = "0000FF";
+google_color_text = "000000";
+google_color_url = "666666";
+//-->
+</script>
+<script type="text/javascript"
+  src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/show_ads.js">
+</script></span><div id="beacon_146" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src='http://www.dreamincode.net/ads/adlog.php?bannerid=146&amp;clientid=49&amp;zoneid=18&amp;source=&amp;block=0&amp;capping=0&amp;cb=1dd2ac6d25c137af6716ea411bd19db5' width='0' height='0' alt='' style='width: 0px; height: 0px;'></div>							</td>
+							<td class="tr2" valign="middle" align="center" width="100%">	
+								<!-- 
+								<div align="center" style="font-size: 18px;">
+									<strong></strong>
+								</div> 
+								-->
+								<div align="center" style="font-size: 18px;">
+									<b><a href="http://www.dreamincode.net/forums/index.php?act=Reg&CODE=00&utm_campaign=Register&utm_content=PleaseRegister" rel="nofollow"><span style="color: blue; font-weight: bold; text-decoration: underline;">Getting C++ Help Is Easy!</span></b></a>
+									<br>
+									<b><span style="font-size: 12px;">Join 58,448 C++ Programmers:</span></b>
+									<br><br>
+									<table align="center" width="180">
+										<tr>
+											<td>
+												<span style="color: black; font-size: 13px;">
+													<ol>
+														<li><b><a href="http://www.dreamincode.net/forums/index.php?act=Reg&CODE=00&utm_campaign=Register&utm_content=PleaseRegister" rel="nofollow" style="color:red;"><u>Join</u></a></b> For Free
+														<li><b><a href="http://www.dreamincode.net/forums/index.php?act=Reg&CODE=00&utm_campaign=Register&utm_content=PleaseRegister" rel="nofollow" style="color:red;"><u>Post</u></a></b> Your Question
+														<li><b><a href="http://www.dreamincode.net/forums/index.php?act=Reg&CODE=00&utm_campaign=Register&utm_content=PleaseRegister" rel="nofollow" style="color:red;"><u>Get</u></a></b> Expert Help
+													</ol>
+												</span>
+											</td>
+										</tr>
+									</table>
+									</div>
+									<br/>
+									<b>OR</b>
+									<br/><br/>
+									<a href="http://www.kasamba.com/Advice/Browse/ViewCategory.aspx?CatID=70&DesID=4&SortBy=9&img=17&kbid=3005" rel="nofollow"><span style="color: blue; font-weight: bold; text-decoration: underline; font-size: 15px;">Chat <I>LIVE</I> With a C++ Expert!</span><br><br></a>
+									<br>
+									<a href="http://www.dreamincode.net/forums/index.php?act=Reg&CODE=00" rel="nofollow"><B>Join Our Community and Make This Box<br> And Other Ads Go Away</B></a>
+									<!--<div style="width: 250px; color: grey;" align="justify">Dream.In.Code is the leading programming community offering advice on computer technology applications such as PHP, Java, and Microsoft's ASP.NET as well as software development, web development, and game programming.
+									</div>-->
+									
+									
+							</td>
+						</tr>
+				</table>
+				</span>
+			
+<br />
+	<br />
+				<h2 class="titular"><span><a href="" class="snipTitle">Big Integer using array to multiplication</a></span></h2>
+			<h2 class="snipDescription"><div class="tehUnderling"> </div></h2>
+								
+				</div>
+<script language='Javascript'>
+	function openSmallWindow(url)  {
+		window.open(url,"smallWindow","width=600,height=290,resizable=yes");
+		return false;
+	}
+</script>
+
+<!--ipb.javascript.start-->
+<script type="text/javascript">
+ //<![CDATA[
+ var ipb_var_st            = "";
+ var ipb_lang_tpl_q1       = "Please enter a page number to jump to between 1 and";
+ var ipb_var_s             = "";
+ var ipb_var_phpext        = "php";
+ var ipb_var_base_url      = "http://www.dreamincode.net/forums/index.php?s=&";
+ var ipb_var_image_url     = "style_images/dic2.1.6b";
+ var ipb_input_f           = "";
+ var ipb_input_t           = "";
+ var ipb_input_p           = "";
+ var ipb_var_cookieid      = "dic_";
+ var ipb_var_cookie_domain = "dreamincode.net";
+ var ipb_var_cookie_path   = "/";
+ var ipb_md5_check         = "0f3cffbe1778bbd171a60172b105b105";
+ var ipb_new_msgs          = 0;
+ var use_enhanced_js       = 1;
+ var use_charset       = "iso-8859-1";
+var ipb_myass_chars_lang = "Not enough characters";
+ //]]>
+</script>
+<script type="text/javascript" src='Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/ipb_glob.js'></script>
+<script type="text/javascript" src='Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/ips_menu.js'></script>
+<script type="text/javascript" src='Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/ips_menv.js'></script>
+<!--ipb.javascript.end--><script type="text/javascript" src='Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/ips_xmlh.js'></script>
+
+<script type="text/javascript" src='Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/ipb_gloc.js'></script>
+<script type="text/javascript" src='Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/dom-drag.js'></script>
+
+
+<table width="100%" border="0" cellspacing="5" cellpadding="4" class="omgwtfbbq">
+                    <!--<tr> 
+                      <td nowrap="nowrap" colspan="2" class=""> <h1><B>Big Integer using array to multiplication</b></h1> </td>
+					 </tr>-->
+			
+				
+          		
+		  <tr>
+	      <td class="">
+                    <B>Submitted By:</B> <a href="http://www.dreamincode.net/forums/index.php?showuser=32093" rel="nofollow">imamkomc</a>
+			  		  </td><td valign="middle" class="" width="20%" rowspan="3"><!-- onmouseover="this.bgColor='#CCCCCC'" onmouseout="this.bgColor='#E1E1E1'" -->
+		  <table align="right" cellspacing="0" cellpadding="0" border="0"><tr><td><b>Actions:</b><br>
+		  											</td></tr></table>  
+		  </td>
+		  </tr>
+		<tr>
+		    <td class="">
+                <B>Rating:</B>
+										<span id="rate_form"><form action="http://www.dreamincode.net/code/rank.php" method="post"><select id="rating" name="rating"><option value="0">0</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> <option value="5">5</option> </select> <input type="hidden" id="sid" name="sid" value="1080" style="padding:0px; margin:0px;" /><input style="padding:0px; margin:0px;" type="submit" value="Rate this snippet!" /></form></span>
+								</td>
+		</tr>
+		  <tr>
+	      <td class="">
+                    <B>Views:</B> 470			  		  </td>
+		  </tr>
+		  <tr>
+	      <td class="">
+                    <h2 class="lulz"><B>Language:</B> C++</h2>
+			  		  </td>
+		  </tr>
+		  
+		  <tr>
+	      <td class="">
+                    <B>Last Modified:</B> July 10, 2007			  		  </td>
+		  </tr>
+		
+			
+
+		<tr style="width:100%; margin:0; padding:0;">
+
+		<td valign="top" align="center" colspan="2" class="snippet" style="width:100%;">
+
+
+
+		
+		<div align="">
+			<br>
+			<table width="100%" border="0" cellspacing="1" cellpadding="2">
+				<tr>
+					<td align="right" valign="top">
+
+						<span><script language='JavaScript' type='text/javascript'><!--
+/* openads=http://www.dreamincode.net/ads bannerid=144 zoneid=28 source= */
+if (typeof phpAds_adg == 'undefined') {
+	document.write('<scr'+'ipt language="JavaScript" type="text/javascript" src="http://www.dreamincode.net/ads/adg.js"></scr'+'ipt>');
+}
+//--></script><script type="text/javascript"><!--
+google_ad_client = "pub-9822709549810875";
+google_ad_width = 250;
+google_ad_height = 250;
+google_ad_format = "250x250_as";
+google_ad_type = "text_image";
+//2007-11-21: 250x250 Default - Snippets
+google_ad_channel = "5003297603";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_text = "000000";
+google_color_url = "000000";
+//-->
+</script>
+<script type="text/javascript"
+  src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/show_ads.js">
+</script></span><div id="beacon_144" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src='http://www.dreamincode.net/ads/adlog.php?bannerid=144&amp;clientid=49&amp;zoneid=28&amp;source=&amp;block=0&amp;capping=0&amp;cb=1f634dd73544d6b78f524a42d3787c50' width='0' height='0' alt='' style='width: 0px; height: 0px;'></div>
+					</td>
+					<td>
+						<div align="center">
+
+							<script type="text/javascript"> 
+							<!-- 
+							lqm_channel=1;
+							lqm_publisher=112;
+							lqm_zone=1;
+							lqm_format=7;
+							//-->
+							</script>
+							<script type="text/javascript" src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/s0000000.js"></script>
+
+
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br>
+		</div>
+
+		
+
+		<div align="left" id="tehSnippetoz">
+		<h2 class="titular"><span>Snippet</span></h2><br />
+		<div><ol><li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #ff0000; font-style: italic;">/*</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #ff0000; font-style: italic;">Autor by ImamkomC++ ver. june 2007</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #ff0000; font-style: italic;">email : imamkomc@gmail.com</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #ff0000; font-style: italic;">blog&nbsp; : imamkomc.wordpress.com</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #ff0000; font-style: italic;">&nbsp; &nbsp; &nbsp; &nbsp; imamkomc.blogspot.com</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #ff0000; font-style: italic;">add&nbsp; &nbsp;: Surabaya-Indonesia</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #ff0000; font-style: italic;">*/</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #339900;">#include &lt;iostream.h&gt;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #339900;">#include &lt;conio.h&gt;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #339900;">#include &lt;stdio.h&gt;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #339900;">#include &lt;math.h&gt;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #339900;">#include &lt;stdlib.h&gt;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #339900;">#include &lt;fstream.h&gt;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #339900;">#include &lt;string.h&gt;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #339900;">#include &lt;iomanip.h&gt;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #339900;">#define bit 5000 // max bit</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #0000ff;">void</span> main <span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">ofstream file_output;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">file_output.<span style="color: #00eeff;">open</span><span style="color: #000000;">&#40;</span><span style="color: #666666;">"result_multiplication.txt"</span><span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #0000ff;">char</span> *num1,*num2,*temp;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #0000ff;">long</span> <span style="color: #0000ff;">int</span> ip,iq,i,j,k,l,diff,*p,*q;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #0000ff;">long</span> <span style="color: #0000ff;">int</span> result_div,remainder_result_div,*save,**result_mul,indek;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #0000ff;">long</span> <span style="color: #0000ff;">int</span> **a,*b,*c;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #0000ff;">long</span> <span style="color: #0000ff;">int</span> save_end,check_zero,kk;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">p=<span style="color: #0000dd;">new</span> <span style="color: #0000ff;">long</span> <span style="color: #0000ff;">int</span><span style="color: #000000;">&#91;</span>bit<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">q=<span style="color: #0000dd;">new</span> <span style="color: #0000ff;">long</span> <span style="color: #0000ff;">int</span><span style="color: #000000;">&#91;</span>bit<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">save=<span style="color: #0000dd;">new</span> <span style="color: #0000ff;">long</span> <span style="color: #0000ff;">int</span><span style="color: #000000;">&#91;</span>bit<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">result_mul=<span style="color: #0000dd;">new</span> <span style="color: #0000ff;">long</span> <span style="color: #0000ff;">int</span>*<span style="color: #000000;">&#91;</span>bit<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">1</span>;i&lt;=bit;i++<span style="color: #000000;">&#41;</span> result_mul<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">new</span> <span style="color: #0000ff;">long</span> <span style="color: #0000ff;">int</span><span style="color: #000000;">&#91;</span>bit<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">a=<span style="color: #0000dd;">new</span> <span style="color: #0000ff;">long</span> <span style="color: #0000ff;">int</span>*<span style="color: #000000;">&#91;</span>bit<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #0000dd;">1</span>;i&lt;=bit;i++<span style="color: #000000;">&#41;</span> a<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">new</span> <span style="color: #0000ff;">long</span> <span style="color: #0000ff;">int</span><span style="color: #000000;">&#91;</span>bit<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">b=<span style="color: #0000dd;">new</span> <span style="color: #0000ff;">long</span> <span style="color: #0000ff;">int</span><span style="color: #000000;">&#91;</span>bit<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">c=<span style="color: #0000dd;">new</span> <span style="color: #0000ff;">long</span> <span style="color: #0000ff;">int</span><span style="color: #000000;">&#91;</span>bit<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #ff0000;">//input number test to compute multiplication</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #ff0000;">//num1=&quot;2&quot;;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #ff0000;">//num2=&quot;2847249271498127021&quot;;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">num1=<span style="color: #666666;">"4680809963388597399266068367743734774068461498084693605866451178965072482934</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #666666;">5880973520148358382759122117472129288352908717416882271074298759944103655936"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">num2=<span style="color: #666666;">"2847249271498127021983403423139571923579123562935665876582735628367"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">ip=<span style="color: #0000dd;">strlen</span><span style="color: #000000;">&#40;</span>num1<span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">iq=<span style="color: #0000dd;">strlen</span><span style="color: #000000;">&#40;</span>num2<span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;file_output&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>length num1 = "</span>&lt;&lt;ip&lt;&lt;<span style="color: #666666;">" digit = "</span>&lt;&lt;ip*<span style="color: #0000dd;">8</span>&lt;&lt;<span style="color: #666666;">" bit"</span>&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;file_output&lt;&lt;<span style="color: #666666;">"length num2 = "</span>&lt;&lt;iq&lt;&lt;<span style="color: #666666;">" digit = "</span>&lt;&lt;iq*<span style="color: #0000dd;">8</span>&lt;&lt;<span style="color: #666666;">" bit"</span>&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span><span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;cout&lt;&lt;<span style="color: #666666;">"p = "</span>&lt;&lt;num1&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;cout&lt;&lt;<span style="color: #666666;">"q = "</span>&lt;&lt;num2&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span><span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;file_output&lt;&lt;<span style="color: #666666;">"p = "</span>&lt;&lt;num1&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;file_output&lt;&lt;<span style="color: #666666;">"q = "</span>&lt;&lt;num2&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">cout&lt;&lt;<span style="color: #666666;">"length p = "</span>&lt;&lt;ip&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">cout&lt;&lt;<span style="color: #666666;">"length q = "</span>&lt;&lt;iq&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">getch <span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #0000ff;">if</span> <span style="color: #000000;">&#40;</span>ip&gt;=iq<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;num1;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;num2;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; ip=<span style="color: #0000dd;">strlen</span><span style="color: #000000;">&#40;</span>num1<span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; iq=<span style="color: #0000dd;">strlen</span><span style="color: #000000;">&#40;</span>num2<span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>ip&lt;iq<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; temp=num1;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; num1=num2;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; num2=temp;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; ip=<span style="color: #0000dd;">strlen</span><span style="color: #000000;">&#40;</span>num1<span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; iq=<span style="color: #0000dd;">strlen</span><span style="color: #000000;">&#40;</span>num2<span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#40;</span>num1<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>-<span style="color: #0000dd;">48</span><span style="color: #000000;">&#41;</span>==<span style="color: #0000dd;">0</span> &amp;&amp; ip==<span style="color: #0000dd;">1</span> <span style="color: #000000;">&#41;</span> || <span style="color: #000000;">&#40;</span><span style="color: #000000;">&#40;</span>num2<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>-<span style="color: #0000dd;">48</span><span style="color: #000000;">&#41;</span>==<span style="color: #0000dd;">0</span> &amp;&amp; iq==<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;cout&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>result multiplication p * q is <span style="color: #666666; font-weight: bold;">\n</span><span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;file_output&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>result multiplication p * q is <span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;c<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; cout&lt;&lt;c<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;file_output&lt;&lt;c<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#40;</span>num1<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>-<span style="color: #0000dd;">48</span><span style="color: #000000;">&#41;</span>==<span style="color: #0000dd;">1</span> &amp;&amp; ip==<span style="color: #0000dd;">1</span> <span style="color: #000000;">&#41;</span> || <span style="color: #000000;">&#40;</span><span style="color: #000000;">&#40;</span>num2<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #000000;">&#93;</span>-<span style="color: #0000dd;">48</span><span style="color: #000000;">&#41;</span>==<span style="color: #0000dd;">1</span> &amp;&amp; iq==<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;cout&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>result multiplication p * q is <span style="color: #666666; font-weight: bold;">\n</span><span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;file_output&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>result multiplication p * q is <span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>ip==<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>i=<span style="color: #0000dd;">1</span>;i&lt;=iq;i++<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=num2<span style="color: #000000;">&#91;</span>i-<span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span>-<span style="color: #0000dd;">48</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cout&lt;&lt;c<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;file_output&lt;&lt;c<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>iq==<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>i=<span style="color: #0000dd;">1</span>;i&lt;=ip;i++<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=num1<span style="color: #000000;">&#91;</span>i-<span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span>-<span style="color: #0000dd;">48</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cout&lt;&lt;c<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;file_output&lt;&lt;c<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #0000ff;">else</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #ff0000;">//inisialitation blank matric a[i][j]</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=ip;i&gt;=<span style="color: #000000;">&#40;</span>ip-iq<span style="color: #000000;">&#41;</span>;i--<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> j=<span style="color: #0000dd;">1</span>;j&lt;=<span style="color: #000000;">&#40;</span><span style="color: #0000dd;">2</span>*ip-<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span>;j++<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;a<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>i=<span style="color: #0000dd;">1</span>;i&lt;=ip;i++<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; p<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=num1<span style="color: #000000;">&#91;</span>i-<span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span>-<span style="color: #0000dd;">48</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">//cout&lt;&lt;p[i];</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">//cout&lt;&lt;&quot;\n&quot;;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;diff=<span style="color: #0000dd;">abs</span><span style="color: #000000;">&#40;</span>ip-iq<span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>j=<span style="color: #0000dd;">1</span>;j&lt;=ip;j++<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>j&lt;=diff<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;q<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">//cout&lt;&lt;q[j];</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>j&gt;diff<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;indek=diff+<span style="color: #0000dd;">1</span>;<span style="color: #ff0000;">//agar indek = 0,1,..</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; q<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>=num2<span style="color: #000000;">&#91;</span>j-indek<span style="color: #000000;">&#93;</span>-<span style="color: #0000dd;">48</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">//cout&lt;&lt;q[j];</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #ff0000;">//cout&lt;&lt;&quot;\n\n&quot;;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;save_end=<span style="color: #0000dd;">0</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>l=ip;l&gt;=<span style="color: #0000dd;">1</span>;l--<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; save<span style="color: #000000;">&#91;</span>ip+<span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span>k=ip;k&gt;=<span style="color: #0000dd;">1</span>;k--<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>q<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span>==<span style="color: #0000dd;">0</span> &amp;&amp; l&lt;=diff<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=p<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>*q<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span>+save_end;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">////cout&lt;&lt;&quot;\nresult_mul[&quot;&lt;&lt;l&lt;&lt;&quot;][&quot;&lt;&lt;k&lt;&lt;&quot;] = &quot;&lt;&lt;result_mul[l][k]&lt;&lt;&quot;\n&quot;;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">//getch ();</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>k==<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>&gt;=<span style="color: #0000dd;">10</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result_div=<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#40;</span>result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>/<span style="color: #0000dd;">10</span><span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;remainder_result_div=<span style="color: #000000;">&#40;</span>result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>-<span style="color: #0000dd;">10</span>*result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=remainder_result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;save<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;save_end=result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>&lt;<span style="color: #0000dd;">10</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; save<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; save_end=<span style="color: #0000dd;">0</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">//result_mul[l][k]=result_mul[l][k];</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">else</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span>&nbsp; </div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">else</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=p<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>*q<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span>+save<span style="color: #000000;">&#91;</span>k+<span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>&lt;<span style="color: #0000dd;">10</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>k==ip<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; save<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>k==<span style="color: #0000dd;">1</span> &amp;&amp; l!=<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;result_div=<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#40;</span>result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>+save_end<span style="color: #000000;">&#41;</span>/<span style="color: #0000dd;">10</span><span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; remainder_result_div=<span style="color: #000000;">&#40;</span>result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>+save_end<span style="color: #000000;">&#41;</span>-<span style="color: #0000dd;">10</span>*result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=remainder_result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; save<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;save_end=result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>k==<span style="color: #0000dd;">1</span> &amp;&amp; l==<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>+save_end;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; save<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">else</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; save<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">//cout&lt;&lt;&quot;result_mul[&quot;&lt;&lt;l&lt;&lt;&quot;][&quot;&lt;&lt;k&lt;&lt;&quot;] = &quot;&lt;&lt;result_mul[l][k]&lt;&lt;&quot;\n&quot;;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>&gt;=<span style="color: #0000dd;">10</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>k==ip<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;result_div=<span style="color: #000000;">&#40;</span>result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>/<span style="color: #0000dd;">10</span><span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; remainder_result_div=result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>-<span style="color: #0000dd;">10</span>*result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=remainder_result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; save<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">else</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>k!=<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;result_div=<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#40;</span>result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>/<span style="color: #0000dd;">10</span><span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; remainder_result_div=<span style="color: #000000;">&#40;</span>result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>-<span style="color: #0000dd;">10</span>*result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=remainder_result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; save<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>k==<span style="color: #0000dd;">1</span> &amp;&amp; l!=<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;result_div=<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#40;</span>result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>+save_end<span style="color: #000000;">&#41;</span>/<span style="color: #0000dd;">10</span><span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; remainder_result_div=<span style="color: #000000;">&#40;</span>result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>+save_end<span style="color: #000000;">&#41;</span>-<span style="color: #0000dd;">10</span>*result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=remainder_result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; save<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;save_end=result_div;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>k==<span style="color: #0000dd;">1</span> &amp;&amp; l==<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=result_mul<span style="color: #000000;">&#91;</span>l<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>+save_end;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; save<span style="color: #000000;">&#91;</span>k<span style="color: #000000;">&#93;</span>=result_div;&nbsp; </div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">//cout&lt;&lt;&quot;result_mul[&quot;&lt;&lt;l&lt;&lt;&quot;][&quot;&lt;&lt;k&lt;&lt;&quot;] = &quot;&lt;&lt;result_mul[l][k]&lt;&lt;&quot;\n&quot;;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">//cout&lt;&lt;&quot;\n&quot;;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <span style="color: #ff0000;">//cout&lt;&lt;&quot;\n\n&quot;;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #ff0000;">//cout&lt;&lt;&quot;\nresult in matric : \n&quot;;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;file_output&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>result in matric : <span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;cout&lt;&lt;setprecision<span style="color: #000000;">&#40;</span><span style="color: #0000dd;">2</span><span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;cout&lt;&lt;setiosflags<span style="color: #000000;">&#40;</span>ios::<span style="color: #00eeff;">fixed</span><span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=ip;i&gt;=<span style="color: #000000;">&#40;</span>ip-iq<span style="color: #000000;">&#41;</span>;i--<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> j=<span style="color: #0000dd;">1</span>;j&lt;=ip;j++<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">//cout&lt;&lt;setw(3)&lt;&lt;result_mul[i][j];</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;file_output&lt;&lt;setw<span style="color: #000000;">&#40;</span><span style="color: #0000dd;">3</span><span style="color: #000000;">&#41;</span>&lt;&lt;result_mul<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">//cout&lt;&lt;&quot;\n&quot;;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;file_output&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #ff0000;">//cout&lt;&lt;&quot;\n\n&quot;;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;file_output&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span><span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #ff0000;">//cout&lt;&lt;&quot;\nresult in matric and ready to sum : \n&quot;;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;file_output&lt;&lt;<span style="color: #666666;">"result in matric and ready to sum : <span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=ip;i&gt;=<span style="color: #000000;">&#40;</span>ip-iq<span style="color: #000000;">&#41;</span>;i--<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> j=<span style="color: #000000;">&#40;</span>ip-iq<span style="color: #000000;">&#41;</span>;j&lt;=<span style="color: #000000;">&#40;</span><span style="color: #0000dd;">2</span>*ip-<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span>;j++<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;a<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>=result_mul<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>j-<span style="color: #000000;">&#40;</span>i-<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span><span style="color: #000000;">&#93;</span>;&nbsp; </div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>a<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>&gt;=<span style="color: #0000dd;">10</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>i==<span style="color: #0000dd;">1</span> &amp;&amp; j==<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;a<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>=result_mul<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>j-<span style="color: #000000;">&#40;</span>i-<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span><span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">else</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;a<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">//cout&lt;&lt;setw(5)&lt;&lt;a[i][j];</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;file_output&lt;&lt;setw<span style="color: #000000;">&#40;</span><span style="color: #0000dd;">5</span><span style="color: #000000;">&#41;</span>&lt;&lt;a<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">//cout&lt;&lt;&quot;\n&quot;;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;file_output&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;save<span style="color: #000000;">&#91;</span><span style="color: #0000dd;">2</span>*ip<span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #000000;">&#40;</span><span style="color: #0000dd;">2</span>*ip-<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span>;i&gt;=<span style="color: #000000;">&#40;</span>ip-iq<span style="color: #000000;">&#41;</span>;i--<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; b<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=save<span style="color: #000000;">&#91;</span>i+<span style="color: #0000dd;">1</span><span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> j=<span style="color: #000000;">&#40;</span>ip-iq<span style="color: #000000;">&#41;</span>;j&lt;=ip;j++<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">//cout&lt;&lt;&quot;a[&quot;&lt;&lt;j&lt;&lt;&quot;][&quot;&lt;&lt;i&lt;&lt;&quot;]=&quot;&lt;&lt;a[j][i]&lt;&lt;endl;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;b<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>+=a<span style="color: #000000;">&#91;</span>j<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>b<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>&gt;=<span style="color: #0000dd;">10</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>i==<span style="color: #000000;">&#40;</span>ip-iq<span style="color: #000000;">&#41;</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;c<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=b<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; save<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">else</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=b<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>%<span style="color: #0000dd;">10</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; save<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=<span style="color: #000000;">&#40;</span>b<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>-c<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span>/<span style="color: #0000dd;">10</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>b<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>&lt;<span style="color: #0000dd;">10</span><span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; c<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=b<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; save<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>=<span style="color: #0000dd;">0</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;check_zero=<span style="color: #000000;">&#40;</span>ip-iq<span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #0000ff;">while</span><span style="color: #000000;">&#40;</span>c<span style="color: #000000;">&#91;</span>check_zero<span style="color: #000000;">&#93;</span>==<span style="color: #0000dd;">0</span><span style="color: #000000;">&#41;</span><span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;check_zero++;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;kk=<span style="color: #0000dd;">1</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;file_output&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>result multiplication p * q is <span style="color: #666666; font-weight: bold;">\n</span><span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;cout&lt;&lt;<span style="color: #666666;">"<span style="color: #666666; font-weight: bold;">\n</span>result multiplication p * q is <span style="color: #666666; font-weight: bold;">\n</span><span style="color: #666666; font-weight: bold;">\n</span>"</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp;<span style="color: #0000ff;">for</span><span style="color: #000000;">&#40;</span><span style="color: #0000ff;">int</span> i=<span style="color: #000000;">&#40;</span>ip-iq<span style="color: #000000;">&#41;</span>;i&lt;=<span style="color: #000000;">&#40;</span><span style="color: #0000dd;">2</span>*ip-<span style="color: #0000dd;">1</span><span style="color: #000000;">&#41;</span>;i++<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">if</span><span style="color: #000000;">&#40;</span>i&lt;check_zero<span style="color: #000000;">&#41;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #0000ff;">continue</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #0000ff;">else</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#123;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;c<span style="color: #000000;">&#91;</span>kk<span style="color: #000000;">&#93;</span>=c<span style="color: #000000;">&#91;</span>i<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cout&lt;&lt;c<span style="color: #000000;">&#91;</span>kk<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;file_output&lt;&lt;c<span style="color: #000000;">&#91;</span>kk<span style="color: #000000;">&#93;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;kk++;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp; &nbsp; <span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">getch <span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;</div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;"><span style="color: #000000;">&#125;</span></div></li>
+<li><div style="font-family: 'Courier New', Courier, monospace; font-weight: normal;">&nbsp;</div></li></ol></div></div>
+		<br />
+		<div align="left">
+		<h2 class="titular"><span>Copy & Paste</span></h2>
+		<textarea rows="10" cols="60">
+/*
+Autor by ImamkomC++ ver. june 2007
+email : imamkomc@gmail.com
+blog  : imamkomc.wordpress.com
+        imamkomc.blogspot.com
+add   : Surabaya-Indonesia
+*/
+#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;fstream.h&gt;
+#include &lt;string.h&gt;
+#include &lt;iomanip.h&gt;
+#define bit 5000 // max bit
+void main ()
+{
+ofstream file_output;
+file_output.open(&quot;result_multiplication.txt&quot;);
+char *num1,*num2,*temp;
+long int ip,iq,i,j,k,l,diff,*p,*q;
+long int result_div,remainder_result_div,*save,**result_mul,indek;
+long int **a,*b,*c;
+long int save_end,check_zero,kk;
+p=new long int[bit];
+q=new long int[bit];
+save=new long int[bit];
+result_mul=new long int*[bit];
+for(int i=1;i&lt;=bit;i++) result_mul[i]=new long int[bit];
+a=new long int*[bit];
+for(int i=1;i&lt;=bit;i++) a[i]=new long int[bit];
+b=new long int[bit];
+c=new long int[bit];
+
+//input number test to compute multiplication
+//num1=&quot;2&quot;;
+//num2=&quot;2847249271498127021&quot;;
+num1=&quot;4680809963388597399266068367743734774068461498084693605866451178965072482934
+5880973520148358382759122117472129288352908717416882271074298759944103655936&quot;;
+num2=&quot;2847249271498127021983403423139571923579123562935665876582735628367&quot;;
+ip=strlen(num1);
+iq=strlen(num2);
+
+   file_output&lt;&lt;&quot;\nlength num1 = &quot;&lt;&lt;ip&lt;&lt;&quot; digit = &quot;&lt;&lt;ip*8&lt;&lt;&quot; bit&quot;&lt;&lt;&quot;\n&quot;;
+   file_output&lt;&lt;&quot;length num2 = &quot;&lt;&lt;iq&lt;&lt;&quot; digit = &quot;&lt;&lt;iq*8&lt;&lt;&quot; bit&quot;&lt;&lt;&quot;\n\n&quot;;
+   cout&lt;&lt;&quot;p = &quot;&lt;&lt;num1&lt;&lt;&quot;\n&quot;;
+   cout&lt;&lt;&quot;q = &quot;&lt;&lt;num2&lt;&lt;&quot;\n\n&quot;;
+   file_output&lt;&lt;&quot;p = &quot;&lt;&lt;num1&lt;&lt;&quot;\n&quot;;
+   file_output&lt;&lt;&quot;q = &quot;&lt;&lt;num2&lt;&lt;&quot;\n&quot;;
+
+cout&lt;&lt;&quot;length p = &quot;&lt;&lt;ip&lt;&lt;&quot;\n&quot;;
+cout&lt;&lt;&quot;length q = &quot;&lt;&lt;iq&lt;&lt;&quot;\n&quot;;
+getch ();
+if (ip&gt;=iq)
+    {
+   num1;
+   num2;
+    ip=strlen(num1);
+    iq=strlen(num2);
+    }
+else if(ip&lt;iq)
+    {
+    temp=num1;
+    num1=num2;
+    num2=temp;
+    ip=strlen(num1);
+    iq=strlen(num2);
+    }
+
+if(((num1[0]-48)==0 &amp;&amp; ip==1 ) || ((num2[0]-48)==0 &amp;&amp; iq==1))
+    {
+   cout&lt;&lt;&quot;\nresult multiplication p * q is \n\n&quot;;
+   file_output&lt;&lt;&quot;\nresult multiplication p * q is \n&quot;;
+   c[1]=0;
+      cout&lt;&lt;c[1];
+   file_output&lt;&lt;c[1];
+   }
+else if(((num1[0]-48)==1 &amp;&amp; ip==1 ) || ((num2[0]-48)==1 &amp;&amp; iq==1))
+    {
+   cout&lt;&lt;&quot;\nresult multiplication p * q is \n\n&quot;;
+   file_output&lt;&lt;&quot;\nresult multiplication p * q is \n&quot;;
+   if(ip==1)
+       {
+      for(i=1;i&lt;=iq;i++)
+          {
+          c[i]=num2[i-1]-48;
+          cout&lt;&lt;c[i];
+           file_output&lt;&lt;c[i];
+         }
+      }
+   else if(iq==1)
+       {
+      for(i=1;i&lt;=ip;i++)
+          {
+          c[i]=num1[i-1]-48;
+          cout&lt;&lt;c[i];
+           file_output&lt;&lt;c[i];
+         }
+      }
+   }
+else
+    {
+//inisialitation blank matric a[i][j]
+   for(int i=ip;i&gt;=(ip-iq);i--)
+       {
+      for(int j=1;j&lt;=(2*ip-1);j++)
+          {
+         a[i][j]=0;
+          }
+      }
+
+   for(i=1;i&lt;=ip;i++)
+       {
+      p[i]=num1[i-1]-48;
+      //cout&lt;&lt;p[i];
+      }
+      //cout&lt;&lt;&quot;\n&quot;;
+   diff=abs(ip-iq);
+   for(j=1;j&lt;=ip;j++)
+       {
+      if(j&lt;=diff)
+          {
+         q[j]=0;
+         //cout&lt;&lt;q[j];
+         }
+      else if(j&gt;diff)
+          {
+         indek=diff+1;//agar indek = 0,1,..
+          q[j]=num2[j-indek]-48;
+         //cout&lt;&lt;q[j];
+          }
+      }
+   //cout&lt;&lt;&quot;\n\n&quot;;
+   save_end=0;
+   for(l=ip;l&gt;=1;l--)
+       {
+      save[ip+1]=0;
+       for(k=ip;k&gt;=1;k--)
+           {
+          if(q[l]==0 &amp;&amp; l&lt;=diff)
+             {
+            result_mul[l][k]=p[k]*q[l]+save_end;
+            ////cout&lt;&lt;&quot;\nresult_mul[&quot;&lt;&lt;l&lt;&lt;&quot;][&quot;&lt;&lt;k&lt;&lt;&quot;] = &quot;&lt;&lt;result_mul[l][k]&lt;&lt;&quot;\n&quot;;
+            //getch ();
+            if(k==1)
+                {
+               if(result_mul[l][k]&gt;=10)
+                   {
+                    result_div=((result_mul[l][k])/10);
+                   remainder_result_div=(result_mul[l][k])-10*result_div;
+                   result_mul[l][k]=remainder_result_div;
+                   save[k]=result_div;
+                   save_end=result_div;
+                  }
+               else if(result_mul[l][k]&lt;10)
+                   {
+                  result_mul[l][k]=result_mul[l][k];
+                  save[k]=0;
+                  save_end=0;
+                  }
+                  //result_mul[l][k]=result_mul[l][k];
+               }
+            else
+                {
+               result_mul[l][k]=0;
+               }
+            }  
+         else
+             {
+             result_mul[l][k]=p[k]*q[l]+save[k+1];
+             if(result_mul[l][k]&lt;10)
+                 {
+                   if(k==ip)
+                   {
+                      save[k]=0;
+                   }
+               else if(k==1 &amp;&amp; l!=1)
+                       {
+                     result_div=((result_mul[l][k]+save_end)/10);
+                        remainder_result_div=(result_mul[l][k]+save_end)-10*result_div;
+                     result_mul[l][k]=remainder_result_div;
+                      save[k]=result_div;
+                     save_end=result_div;
+                      }
+                  else if(k==1 &amp;&amp; l==1)
+                       {
+                     result_mul[l][k]=result_mul[l][k]+save_end;
+                      save[k]=0;
+                      }
+                else
+                    {
+                    save[k]=0;
+                   }
+                //cout&lt;&lt;&quot;result_mul[&quot;&lt;&lt;l&lt;&lt;&quot;][&quot;&lt;&lt;k&lt;&lt;&quot;] = &quot;&lt;&lt;result_mul[l][k]&lt;&lt;&quot;\n&quot;;
+                }
+             else if(result_mul[l][k]&gt;=10)
+                 {
+                if(k==ip)
+                   {
+                   result_div=(result_mul[l][k]/10);
+                    remainder_result_div=result_mul[l][k]-10*result_div;
+                    result_mul[l][k]=remainder_result_div;
+                    save[k]=result_div;
+                   }
+                    else
+                    {
+
+                  if(k!=1)
+                       {
+                     result_div=((result_mul[l][k])/10);
+                        remainder_result_div=(result_mul[l][k])-10*result_div;
+                        result_mul[l][k]=remainder_result_div;
+                      save[k]=result_div;
+                      }
+                   else if(k==1 &amp;&amp; l!=1)
+                       {
+                     result_div=((result_mul[l][k]+save_end)/10);
+                        remainder_result_div=(result_mul[l][k]+save_end)-10*result_div;
+                     result_mul[l][k]=remainder_result_div;
+                      save[k]=result_div;
+                     save_end=result_div;
+                      }
+                  else if(k==1 &amp;&amp; l==1)
+                       {
+                     result_mul[l][k]=result_mul[l][k]+save_end;
+                      save[k]=result_div;  
+                      }
+                   }
+                //cout&lt;&lt;&quot;result_mul[&quot;&lt;&lt;l&lt;&lt;&quot;][&quot;&lt;&lt;k&lt;&lt;&quot;] = &quot;&lt;&lt;result_mul[l][k]&lt;&lt;&quot;\n&quot;;
+                    }
+            }
+          }
+
+      //cout&lt;&lt;&quot;\n&quot;;
+      }
+    //cout&lt;&lt;&quot;\n\n&quot;;
+
+   //cout&lt;&lt;&quot;\nresult in matric : \n&quot;;
+   file_output&lt;&lt;&quot;\nresult in matric : \n&quot;;
+   cout&lt;&lt;setprecision(2);
+   cout&lt;&lt;setiosflags(ios::fixed);
+   for(int i=ip;i&gt;=(ip-iq);i--)
+       {
+      for(int j=1;j&lt;=ip;j++)
+          {
+         //cout&lt;&lt;setw(3)&lt;&lt;result_mul[i][j];
+         file_output&lt;&lt;setw(3)&lt;&lt;result_mul[i][j];
+          }
+         //cout&lt;&lt;&quot;\n&quot;;
+         file_output&lt;&lt;&quot;\n&quot;;
+      }
+   //cout&lt;&lt;&quot;\n\n&quot;;
+   file_output&lt;&lt;&quot;\n\n&quot;;
+   //cout&lt;&lt;&quot;\nresult in matric and ready to sum : \n&quot;;
+   file_output&lt;&lt;&quot;result in matric and ready to sum : \n&quot;;
+   for(int i=ip;i&gt;=(ip-iq);i--)
+       {
+      for(int j=(ip-iq);j&lt;=(2*ip-1);j++)
+          {
+         a[i][j]=result_mul[i][j-(i-1)];  
+          if(a[i][j]&gt;=10)
+               {
+            if(i==1 &amp;&amp; j==1)
+               {
+               a[i][j]=result_mul[i][j-(i-1)];
+               }
+            else
+                {
+               a[i][j]=0;
+               }
+            }
+         //cout&lt;&lt;setw(5)&lt;&lt;a[i][j];
+         file_output&lt;&lt;setw(5)&lt;&lt;a[i][j];
+          }
+         //cout&lt;&lt;&quot;\n&quot;;
+         file_output&lt;&lt;&quot;\n&quot;;
+      }
+
+   save[2*ip]=0;
+   for(int i=(2*ip-1);i&gt;=(ip-iq);i--)
+       {
+      b[i]=save[i+1];
+      for(int j=(ip-iq);j&lt;=ip;j++)
+          {
+         //cout&lt;&lt;&quot;a[&quot;&lt;&lt;j&lt;&lt;&quot;][&quot;&lt;&lt;i&lt;&lt;&quot;]=&quot;&lt;&lt;a[j][i]&lt;&lt;endl;
+         b[i]+=a[j][i];
+          }
+          if(b[i]&gt;=10)
+             {
+            if(i==(ip-iq))
+                {
+               c[i]=b[i];
+                save[i]=0;
+               }
+            else
+                {
+                  c[i]=b[i]%10;
+                save[i]=(b[i]-c[i])/10;
+               }
+            }
+         else if(b[i]&lt;10)
+             {
+            c[i]=b[i];
+            save[i]=0;
+            }
+      }
+
+   check_zero=(ip-iq);
+   while(c[check_zero]==0){
+   check_zero++;
+   }
+   kk=1;
+   file_output&lt;&lt;&quot;\nresult multiplication p * q is \n\n&quot;;
+   cout&lt;&lt;&quot;\nresult multiplication p * q is \n\n&quot;;
+   for(int i=(ip-iq);i&lt;=(2*ip-1);i++)
+       {
+       if(i&lt;check_zero)
+          {
+         continue;
+         }
+      else
+          {
+         c[kk]=c[i];
+          cout&lt;&lt;c[kk];
+         file_output&lt;&lt;c[kk];
+         kk++;
+         }
+      }
+    }
+getch ();
+}
+</textarea>
+		</div>
+				</td>
+			  </tr>
+			  			  <tr>
+				<td colspan="2"> <br />
+						<table width="100%" border="0" cellpadding="0" id="viewTehComments">
+      
+		<!--<tr><td nowrap="nowrap" colspan="2" class="titles"> <h1><B>Comments for Big Integer using array to multiplication</b></h1> </td></tr>-->
+		<tr><td nowrap="nowrap" colspan="2" class=""> <h2 class="titular"><span>Comments<div class="tehUnderling"> </div></span></h2> <br /></td></tr>
+				<tr>
+	     <td class="">
+	      There are currently no comments for this snippet. Be the first to comment!
+	     </td>
+	    </tr>
+					</table>
+		<br />
+	    <table width="100%" cellpadding="0" id="addTehComments">
+	<form action="http://www.dreamincode.net/code/comments.php?printable=1" method="post">
+		<tr><td nowrap="nowrap" colspan="2" class=""><a name="addComment"></a><h2 class="titular"><span>Add comment<div class="tehUnderling"> </div></span></h2><br /></td></tr>
+				<tr>
+			<td>You must be registered and logged on to &lt;/dream.in.code&gt; to leave comments.</td>
+		</tr>
+		      </form>
+      </table>
+					</td>
+			  </tr>
+		</table>
+
+			 <br /><br />
+<TABLE align="center" width="100%">
+<TR>
+	<TD align="center"><script  src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/getjs002.js"></script><div id="beacon_150" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src='http://www.dreamincode.net/ads/adlog.php?bannerid=150&amp;clientid=75&amp;zoneid=24&amp;source=&amp;block=0&amp;capping=0&amp;cb=a3aef04f6509dbbdc6d155a7b1b8aaae' width='0' height='0' alt='' style='width: 0px; height: 0px;'></div></TD>
+	<TD align="center"></TD>
+</TR>
+</TABLE>
+<br /><br />
+	<div id="copyright">
+	<div align="center">
+	<strong><a href="http://www.dreamincode.net/downloads/2007_MediaKit.pdf" rel="nofollow">Advertising</a><img src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/pdf00000.gif" border="0" valign="middle"> | <a href="http://www.dreamincode.net/?p=tos" rel="nofollow">Terms of Use</a> | <a href="http://www.dreamincode.net/?p=about" rel="nofollow">About Us</a> | <a href="http://www.dreamincode.net/forums/lofiversion/">Site Map</a></strong>
+</div>
+
+<br/>
+
+<div align="center">
+	<b>Forum Index:</b>
+		<a href="http://www.dreamincode.net/forums/lofiversion/index.php/f76.html">Programming Help</a>&nbsp;|
+				
+					 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f15.html">C and C++</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f21.html">Visual Basic</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f32.html">Java</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f67.html">VB.NET</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f84.html">C#</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f30.html">ASP.NET</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f28.html">PHP</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f31.html">ColdFusion</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f29.html">Perl and Python</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f70.html">Ruby</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f14.html">Databases</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f62.html">Other Languages</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f69.html">Game Programming</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f82.html">Software Development</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f83.html">Industry News</a>&nbsp;|
+						<a href="http://www.dreamincode.net/forums/lofiversion/index.php/f78.html">Programming Tutorials</a>&nbsp;|
+				
+					 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f48.html">C++ Tutorials</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f51.html">Visual Basic Tutorials</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f50.html">Java Tutorials</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f47.html">PHP Tutorials</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f49.html">ColdFusion Tutorials</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f53.html">Linux Tutorials</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f54.html">Windows Tutorials</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f56.html">HTML/JavaScript Tutorials</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f57.html">CSS Tutorials</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f58.html">Flash Tutorials</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f64.html">Web Promotion Tutorials</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f44.html">Photoshop Tutorials</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f85.html">C# Tutorials</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f86.html">Software Development Tutorials</a>&nbsp;|
+								 <a href="http://www.dreamincode.net/forums/lofiversion/index.php/f87.html">Database Tutorials</a>&nbsp;|
+					</div>
+
+<br/>
+
+<div align="center">Copyright 2001-2007 <a href="http://www.mediagroup1.com/" rel="nofollow"><B>MediaGroup1 LLC</B></a>, All Rights Reserved<br>A <a href="http://www.mediagroup1.com/" rel="nofollow"><B>MediaGroup1 LLC</B></a> Production - Version 6.0.2.1.36</div>
+
+
+	</div> 
+
+<!-- EndContentMarker -->
+
+			</td>
+			<td width="160" valign="top" class="column2">
+			<span name="KonaFilter">
+<div id="search">
+		
+		<h2>Search<span class="w00t">w00t</span></h2>
+	<!-- Google CSE Search Box Begins  -->
+	  <form style="margin:0;" id="searchbox_000872085005376217422:zamd_7elal4" action="http://www.dreamincode.net/home">
+		<input type="hidden" name="cx" value="000872085005376217422:zamd_7elal4" />
+		<input type="hidden" name="p" value="google" />
+		<input type="hidden" name="cof" value="FORID:11" />
+		<input name="q" type="text" size="11" value="" />
+		<input type="submit" name="sa" value="Go" />
+	  </form>
+
+<!-- Google CSE code begins -->
+
+	</div>
+	<div class="tutorials">
+		<br />
+		<a href="http://www.dreamincode.net/rss/featured.php" rel="alternate" type="application/rss+xml"><img src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/feed-ico.png" align="left" alt="" style="vertical-align:middle;border:0; float: left; margin-right: 5px;"/></a>
+
+		<script type="text/javascript">
+
+		document.write('<a rel="nofollow" href="http://del.icio.us/post?url=http://www.dreamincode.net&title=Dream.In.Code Programming Community" title="Bookmark This to del.icio.us"><img src="/home/images/80727937.png" alt="delicious" height="16" width="16" /></a>');
+
+		document.write('<a rel="nofollow" href="http://digg.com/submit?phase=2&url='+encodeURIComponent(location.href)+'" title="Digg This!"><img src="/home/images/89072042.png" alt="digg" height="16" width="16" /></a>');
+
+		document.write('<a rel="nofollow" href="http://www.furl.net/storeIt.jsp?u='+encodeURIComponent(location.href)+'&t='+encodeURIComponent(document.title)+'" title="Bookmark To Furl"><img src="/home/images/47600014.png" alt="furl" height="16" width="16" /></a>');
+
+		document.write('<a rel="nofollow" href="http://www.google.com/bookmarks/mark?op=add&bkmk='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Bookmark to Google"><img src="/home/images/10847106.png" alt="google" height="16" width="16" /></a>');
+
+		document.write('<a rel="nofollow"  href="http://www.newsvine.com/_tools/seed&save?u='+encodeURIComponent(location.href)+'&h='+encodeURIComponent(document.title)+'" title="Bookmark to Newsvine" ><img src="/home/images/27563199.png" alt="newsvine" height="16" width="16" /></a><br>');
+
+		document.write('<a rel="nofollow" href="http://reddit.com/submit? url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Add to reddit"><img src="/home/images/10796749.png" alt="reddit" height="16" width="16" /></a>');
+
+		document.write('<a rel="nofollow" href="http://scuttle.org/bookmarks.php/pass?action=add&address='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Bookmark to Scuttle"><img src="/home/images/82780522.png" alt="scuttle" height="16" width="16" /></a>');
+
+		document.write('<a rel="nofollow" href="http://www.spurl.net/spurl.php?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Spurl This!"><img src="/home/images/67105361.png" alt="spurl" height="16" width="16" /></a>');
+
+		document.write('<a rel="nofollow" href="http://www.squidoo.com/lensmaster/bookmark?'+encodeURIComponent(location.href)+'"><img src="/home/images/25436023.png" alt="Squidoo" height="16" width="16" /></a>');
+
+		document.write('<a rel="nofollow" href="http://technorati.com/faves?add='+encodeURIComponent(location.href)+'" title="Add to Technorati Favorites" ><img src="/home/images/81723336.png" alt="Technorati" height="16" width="16" /></a>');
+
+		</script>
+
+				<h2>Live C++ Help!</h2>
+		<a href="http://www.kasamba.com/Advice/Browse/ViewCategory.aspx?CatID=70&DesID=4&SortBy=9&img=17&kbid=3005" width="160" height="163" rel="nofollow"><img src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/kasamba2.gif"><img src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/se000000.gif">
+		</a>
+		
+	
+	
+	<h2><a href="http://www.dreamincode.net/forums/showforum48.htm">C++ Tutorials</a></h2>
+	<ul>
+			<li><a href="http://www.dreamincode.net/forums/showtopic10157.htm">Data Structures In C++ Tutorial</a></li>
+			<li><a href="http://www.dreamincode.net/forums/showtopic12694.htm">C++ Quick Reference Sheet (Cheat Sheet)</a></li>
+			<li><a href="http://www.dreamincode.net/forums/showtopic11833.htm">Making a 2D Game Engine Using OpenGL - Part3 is up</a></li>
+			<li><a href="http://www.dreamincode.net/forums/showtopic9873.htm">Object Oriented Programming (oop) Tutorial</a></li>
+			<li><a href="http://www.dreamincode.net/forums/showtopic9872.htm">Polymorphism Tutorial</a></li>
+			<li><a href="http://www.dreamincode.net/forums/showtopic10826.htm">Pointers</a></li>
+			<li><a href="http://www.dreamincode.net/forums/showtopic11809.htm">A Tutorial On Recursion</a></li>
+			<li><a href="http://www.dreamincode.net/forums/showtopic13919.htm">Understanding Loops in C++</a></li>
+			<li><a href="http://www.dreamincode.net/forums/showtopic10509.htm">Printf V/s Cout [DreamInCode.net]</a></li>
+			<li><a href="http://www.dreamincode.net/forums/showtopic14057.htm">Producing Random Numbers</a></li>
+			<li><a href="http://www.dreamincode.net/forums/showforum48.htm"><strong>39 More C++ Tutorials...</strong></a></li>	</ul>
+	
+
+
+
+
+	<h2>Reference Sheets</h2>
+	<a href="http://www.dreamincode.net/forums/showtopic17947.htm"><img src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/ref_shee.gif" height="151" width="157"></a>
+
+
+
+
+
+	
+
+	
+	<h2><a href="http://www.dreamincode.net/code/browse.php?cid=2">C++ Snippets</a></h2>
+	<ul>
+			<li><a href="http://www.dreamincode.net/code/snippet38.htm">Sleep Timer</a></li>
+			<li><a href="http://www.dreamincode.net/code/snippet39.htm">Convert cases of strings</a></li>
+			<li><a href="http://www.dreamincode.net/code/snippet82.htm">Linked List Class</a></li>
+			<li><a href="http://www.dreamincode.net/code/snippet77.htm">Getting Current Directory</a></li>
+			<li><a href="http://www.dreamincode.net/code/snippet80.htm">Recursive Fibonacci Sequence</a></li>
+			<li><a href="http://www.dreamincode.net/code/snippet313.htm">Shortest Function to Reverse a String ( Uses Recursion )</a></li>
+			<li><a href="http://www.dreamincode.net/code/snippet75.htm">Complex Numbers Class</a></li>
+			<li><a href="http://www.dreamincode.net/code/snippet279.htm">Insertion Sort Example</a></li>
+			<li><a href="http://www.dreamincode.net/code/snippet244.htm">Finding Square Root without using sqrt()</a></li>
+			<li><a href="http://www.dreamincode.net/code/snippet31.htm">Random Numbers</a></li>
+			<li><a href="http://www.dreamincode.net/code/browse.php?cid=2"><strong>278 More C++ Snippets...</strong></a></li>	</ul>
+	
+
+		<h2>Bye Bye Ads</h2>
+	<a rel="nofollow" href="http://www.dreamincode.net/forums/index.php?act=paysubs&CODE=index"><img src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/dicpp000.gif">
+	</a>
+	
+	<!-- google_ad_section_start(weight=ignore) -->	
+
+<h2>Free <abbr title="Dream.in.Code">DIC</abbr> T-Shirt</h2>
+<a href="http://www.dreamincode.net/forums/index.php?act=announce&f=1&id=6" rel="nofollow"><img alt="T-Shirt Example" width="160" height="149" src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/tshirt00.gif"/></a>
+
+
+<h2>Related Sites</h2>
+<ul>
+<li>
+	<a class="menu" href="http://www.talkfreelance.com/" rel="nofollow">Freelance design forums</a>
+</li>
+<li>
+	<a class="menu" href="http://www.daydreamgraphics.com/" rel="nofollow">DayDream Graphics</a>
+</li>
+<li>
+	<a class="menu" href="http://www.computerscripts.com/" title="Scripts" rel="nofollow">Scripts</a>
+</li>
+<li>
+	<a class="menu" href="http://www.hostingdiscussion.com/" title="HostingDiscussion.com" rel="nofollow">HostingDiscussion.com</a>
+</li>
+<li>
+	<a class="menu" href="http://www.photoshopforums.com/" title="Photoshop Forums" rel="nofollow">PhotoshopForums.com</a>
+</li>
+<li>
+	<a class="menu" href="http://www.developercube.com/" title="Webmaster Forums" rel="nofollow">DeveloperCube</a>
+</li>
+<li>
+	<a class="menu" href="http://www.webdevbooks.com/" title="TProgramming Books" rel="nofollow">WebDevBooks.com</a>
+</li>
+<li>
+	<a class="menu" href="http://www.communityadmins.com/" title="Build Communities" rel="nofollow">CommunityAdmins.com</a>
+</li>
+<li>
+	<a class="menu" href="http://www.communitypromotion.com/" title="Promote Forums" rel="nofollow">CommunityPromotion.com</a>
+</li>
+</ul>
+
+<h2>Monthly Drawing</h2>
+<a href="http://www.dreamincode.net/forums/index.php?showtopic=19383" rel="nofollow"><img alt="Thumb Drive" width="130" height="77" src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/monthlyg.gif"/></a>
+
+
+<h2>Partners</h2>
+<ul>
+	<li>
+	  <a href="http://www.dotnetspider.com/" title="Outsourcing and Offshore software development in India" rel="nofollow">Dotnet Spider</a>
+	</li>
+	<li>
+	  <a href="http://www.topxml.com/" title="Microsoft BizTalk, SOA, XML" rel="nofollow">BizTalk Adaptors</a>
+	</li>
+	<li>
+	  <a href="http://www.planet-source-code.com/" title="The largest public source code database on the Internet" rel="nofollow">Planet Source Code</a>
+	</li>
+	<li>
+	  <a href="http://aspalliance.com/" title="The #1 ASP.NET Community" rel="nofollow">ASPAlliance</a>
+	</li>  
+</ul>
+
+
+<!-- google_ad_section_end -->
+
+	<h2>Top Contributors</h2>
+	<span style="font-size: 11px; color: #BBBBBB; margin: 3px; font-weight: bold;">Top 10 Kudos This Month</span>
+	<!-- google_ad_section_start(weight=ignore) -->	
+<!-- <style type="text/css">
+#top10 img { width: 25px; height: 25px;}
+</style>
+ -->
+		
+<ul>
+				
+				<li><a href="http://www.dreamincode.net/forums/index.php?showuser=40184" rel="nofollow"><b><span style='color:#00CCCC'>PsychoCoder</span></b></a> (400)</li>
+
+				
+				<li><a href="http://www.dreamincode.net/forums/index.php?showuser=47395" rel="nofollow"><b><span style='color:#00CCCC'>jjhaag</span></b></a> (300)</li>
+
+				
+				<li><a href="http://www.dreamincode.net/forums/index.php?showuser=15516" rel="nofollow"><b><span style='color:#CC6633'>girasquid</span></b></a> (150)</li>
+
+				
+				<li><a href="http://www.dreamincode.net/forums/index.php?showuser=32303" rel="nofollow"><b><span style='color:#999933'>no2pencil</span></b></a> (125)</li>
+
+				
+				<li><a href="http://www.dreamincode.net/forums/index.php?showuser=52176" rel="nofollow"><b><span style='color:#993399'>baavgai</span></b></a> (125)</li>
+
+				
+				<li><a href="http://www.dreamincode.net/forums/index.php?showuser=53732" rel="nofollow"><b><span style='color:#CC6633'>Mikhail</span></b></a> (100)</li>
+
+				
+				<li><a href="http://www.dreamincode.net/forums/index.php?showuser=47946" rel="nofollow"><b><span style='color:#999933'>RodgerB</span></b></a> (100)</li>
+
+				
+				<li><a href="http://www.dreamincode.net/forums/index.php?showuser=21251" rel="nofollow"><b><span style='color:#CC6633'>muddasir</span></b></a> (75)</li>
+
+				
+				<li><a href="http://www.dreamincode.net/forums/index.php?showuser=40882" rel="nofollow"><b><span style='color:#CC6633'>nirvanarupali</span></b></a> (75)</li>
+
+				
+				<li><a href="http://www.dreamincode.net/forums/index.php?showuser=20238" rel="nofollow"><b><span style='color:#CC6633'>manhaeve5</span></b></a> (50)</li>
+
+</ul>
+
+
+
+<!-- google_ad_section_end -->
+	<center><a href="http://www.dreamincode.net/forums/index.php?showtopic=37074"><img src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/mostkudo.gif" border="0"></a></center>
+
+	
+</div>
+</span></td>
+</tr></table>
+
+
+	<!-- Kontera -->
+	<script type="text/javascript">
+	var dc_UnitID = 14;
+	var dc_PublisherID = 8210;
+	var dc_AdLinkColor = '0000FF';
+	//var dc_AdLinkColor = 'f16d12';
+	var dc_adprod='ADL';
+	var dc_maxLinks='8';
+	</script>
+	<script type="text/javascript" SRC="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/KonaLibI.js"></script>
+
+
+	<!-- start Vibrant Media IntelliTXT script section
+	<script type="text/javascript" src="http://dreamincode.us.intellitxt.com/intellitxt/front.asp?ipid=5877"></script>
+	 -->
+
+	<!-- <script type="text/javascript" src="/home/templates/se_hilite.js"></script> -->
+
+	<!-- Crazy Egg 
+	<script type="text/javascript" src="http://crazyegg.com/pages/scripts/0003/0872.js"> </script>-->
+
+
+<!-- Google Analytics -->
+<script src="Big Integer using array to multiplication - C++ - Source Code _ DreamInCode.net_files/urchin00.js" type="text/javascript"></script>
+<script type="text/javascript">
+_uacct = "UA-69851-1";
+_udn="dreamincode.net"; 
+urchinTracker();
+</script>
+</body>
+</html>
+
+<!-- This document saved from http://www.dreamincode.net/code/snippet1080.htm -->

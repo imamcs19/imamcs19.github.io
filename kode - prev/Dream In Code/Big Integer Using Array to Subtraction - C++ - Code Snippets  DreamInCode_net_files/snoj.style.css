@@ -1,0 +1,97 @@
+@import url( http://www.dreamincode.net/forums/style_images/css_7.css );
+.snipTitle:first-letter {
+	TEXT-TRANSFORM: uppercase
+}
+#tehSnippetoz OL LI {
+	BORDER-TOP: white 3px solid; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; BACKGROUND-COLOR: #fbfbfb
+}
+#tehSnippetoz OL LI DIV {
+	DISPLAY: inline; PADDING-LEFT: 10px
+}
+H2.titular {
+	PADDING-BOTTOM: 4px
+}
+H2.titular SPAN {
+	DISPLAY: inline; FONT-SIZE: 2em; BORDER-BOTTOM: black 0px solid; POSITION: relative
+}
+#viewTehComments TD P {
+	PADDING-BOTTOM: 30px
+}
+#tehNav H1 {
+	DISPLAY: inline; FONT-SIZE: 1.4em
+}
+#tehNav .titular A {
+	TEXT-DECORATION: none
+}
+#tehNav .navPath {
+	DISPLAY: block; WIDTH: 100%; BORDER-BOTTOM: 0px
+}
+#tehNav .snipDescription {
+	FONT-SIZE: 1em; PADDING-BOTTOM: 4px
+}
+TD.tehCatsName {
+	FONT-SIZE: 0.9em; PADDING-BOTTOM: 3px; PADDING-TOP: 3px
+}
+.tehCats A {
+	TEXT-DECORATION: none
+}
+DIV#tehNav {
+	POSITION: relative
+}
+DIV#addsnippet {
+	RIGHT: 0px; POSITION: absolute; TOP: 50%
+}
+DIV#addsnippet INPUT {
+	BORDER-RIGHT: 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: 1px solid; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; BORDER-LEFT: 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: 1px solid
+}
+DIV.tehUnderling {
+	DISPLAY: none; WIDTH: 100%; BORDER-BOTTOM: black 0px solid; HEIGHT: 0px
+}
+TABLE.tehListings {
+	BORDER-TOP: black 1px solid
+}
+TABLE.tehCatListing {
+	BORDER-TOP: #ccf 1px solid; BACKGROUND-IMAGE: url(/home/images/code_grad.jpg); BACKGROUND-REPEAT: repeat-x
+}
+TABLE.tehListings {
+	BORDER-TOP: #ccf 1px solid; BACKGROUND-IMAGE: url(/home/images/code_grad.jpg); BACKGROUND-REPEAT: repeat-x
+}
+.omgwtfbbq {
+	BORDER-TOP: #ccf 1px solid; BACKGROUND-IMAGE: url(/home/images/code_grad.jpg); BACKGROUND-REPEAT: repeat-x
+}
+TABLE.tehCatListing {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+TABLE.tehListings .tr1 {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+TABLE.tehListings .tr2 {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+TABLE.tehListings A {
+	TEXT-DECORATION: none
+}
+A.snipLink {
+	
+}
+TABLE.tehListings DIV A.snipLink {
+	FONT-WEIGHT: bold; FONT-SIZE: 1.2em
+}
+TABLE.tehListings DIV.snipDesc {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px
+}
+TABLE.aListings {
+	MARGIN-BOTTOM: 15px; BORDER-LEFT: black 1px solid
+}
+.cs_promo {
+	WIDTH: 100%
+}
+.cs_promo TD {
+	TEXT-ALIGN: center
+}
+.cs_promo IMG {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.beleted .snipDesc {
+	TEXT-DECORATION: line-through
+}

@@ -1,0 +1,2617 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.dreamincode.net/code/snippet1084.htm -->
+<HTML lang=en-US><HEAD><TITLE>Big Integer Using Array to Subtraction - C++ - Code Snippets | DreamInCode.net</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<META http-equiv=Content-Script-Type content=text/javascript>
+<META content=noodp name=robots><LINK href="/home/favicon.ico" 
+type=image/vnd.microsoft.icon rel="shortcut icon"><LINK 
+title="dream.in.code Forums" href="/rss/featured.php" type=application/rss+xml 
+rel=alternate><!-- OLD LAYOUT -->
+<STYLE type=text/css>@import url( /home/templates/styles.css );
+@import url( /home/templates/snoj.style.css );
+</STYLE>
+
+<SCRIPT type=text/javascript>
+      //<![CDATA[
+      function loginToggle() {
+        var target = document.getElementById("login").getElementsByTagName("div")[0];
+        !target.className.match(/ visible/) ? target.className += " visible" : target.className = target.className.replace(/ visible/, "");
+        }
+      //]]>
+    </SCRIPT>
+
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY>
+<TABLE id=header cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD vAlign=top>
+      <H1 id=logo><A href="http://www.dreamincode.net/"><IMG height=110 
+      alt="</dream.in.code>: Programming &amp; Web Development Community" 
+      src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/logo.gif" 
+      width=264></A></H1></TD>
+    <TD id=leaderboard vAlign=top>
+      <SCRIPT type=text/javascript>
+   e9 = new Object();
+   e9.size = "728x90,468x60";
+   e9.noAd = 1;
+</SCRIPT>
+
+      <SCRIPT 
+      src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/tags.js" 
+      type=text/javascript></SCRIPT>
+
+      <DIV id=beacon_116 
+      style="LEFT: 0px; VISIBILITY: hidden; POSITION: absolute; TOP: 0px"><IMG 
+      style="WIDTH: 0px; HEIGHT: 0px" height=0 alt="" 
+      src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/adlog.gif" 
+      width=0></DIV></TD></TR>
+  <TR>
+    <TD id=navigation-login-register vAlign=top colSpan=2>
+      <UL class=navigation>
+        <LI class=first><A href="http://www.dreamincode.net/">Home</A> </LI>
+        <LI><A href="http://www.dreamincode.net/forums/">Forums</A> </LI>
+        <LI><A 
+        href="http://www.dreamincode.net/forums/showforum76.htm">Programming</A> 
+        </LI>
+        <LI><A href="http://www.dreamincode.net/forums/showforum74.htm">Web 
+        Development</A> </LI>
+        <LI><A 
+        href="http://www.dreamincode.net/forums/showforum78.htm">Tutorials</A> 
+        </LI>
+        <LI><A href="http://www.dreamincode.net/code/">Snippets</A> </LI>
+        <LI><A 
+        href="http://www.dreamincode.net/forums/?automodule=blog">Blogs</A> 
+</LI>
+        <LI><A href="http://www.dreamincode.net/resources/" 
+        rel=nofollow>Resources</A> </LI>
+        <LI class=last><A 
+        href="http://www.dreamincode.net/forums/showforum1.htm" 
+        rel=nofollow>Lounge</A> </LI></UL>
+      <UL id=login-register>
+        <LI id=login><A 
+        href="http://www.dreamincode.net/forums/index.php?act=Login&amp;CODE=00" 
+        rel=nofollow>Login</A> </LI>
+        <LI id=register><A 
+        href="http://www.dreamincode.net/forums/index.php?act=Reg&amp;CODE=00" 
+        rel=nofollow>Join for Free!</A> </LI></UL></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD class=column1 vAlign=top>
+      <DIV class=navigation><!-- google_ad_section_start(weight=ignore) -->
+      <H2><A 
+      href="http://www.dreamincode.net/forums/showforum76.htm">Programming 
+      Help</A></H2>
+      <UL class=navigation>
+        <LI><A href="http://www.dreamincode.net/forums/showforum15.htm">C and 
+        C++</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum21.htm">Visual 
+        Basic</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum32.htm">Java</A> 
+
+        <LI><A 
+        href="http://www.dreamincode.net/forums/showforum67.htm">VB.NET</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum84.htm">C#</A> 
+        <LI><A 
+        href="http://www.dreamincode.net/forums/showforum30.htm">ASP.NET</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum28.htm">PHP</A> 
+        <LI><A 
+        href="http://www.dreamincode.net/forums/showforum31.htm">ColdFusion 
+        Forum</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum29.htm">Perl and 
+        Python</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum70.htm">Ruby</A> 
+
+        <LI><A 
+        href="http://www.dreamincode.net/forums/showforum14.htm">Databases</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum62.htm">Other 
+        Languages</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum69.htm">Game 
+        Programming</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum82.htm">Software 
+        Development</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum83.htm">Industry 
+        News</A> </LI></UL>
+      <H2><A href="http://www.dreamincode.net/forums/showforum74.htm">Web 
+      Development</A></H2>
+      <UL class=navigation>
+        <LI><A href="http://www.dreamincode.net/forums/showforum63.htm">Web 
+        Development</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum4.htm">HTML 
+        &amp; CSS</A> 
+        <LI><A 
+        href="http://www.dreamincode.net/forums/showforum90.htm">JavaScript</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum3.htm">Graphic 
+        Design</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum8.htm">Flash 
+        &amp; ActionScript</A> 
+        <LI><A 
+        href="http://www.dreamincode.net/forums/showforum89.htm">Blogging</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum59.htm">SEO 
+        &amp; Advertising</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum88.htm">Web 
+        Servers &amp; Hosting</A> 
+        <LI><A href="http://www.dreamincode.net/forums/showforum5.htm">Site 
+        Check</A> </LI></UL><!-- google_ad_section_end -->
+      <SCRIPT type=text/javascript>
+   e9 = new Object();
+   e9.size = "160x600,120x600";
+   e9.noAd = 1;
+</SCRIPT>
+
+      <SCRIPT 
+      src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/tags.js" 
+      type=text/javascript></SCRIPT>
+
+      <DIV id=beacon_86 
+      style="LEFT: 0px; VISIBILITY: hidden; POSITION: absolute; TOP: 0px"><IMG 
+      style="WIDTH: 0px; HEIGHT: 0px" height=0 alt="" 
+      src="D:\kk\Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files\adlog(1).gif" 
+      width=0></DIV><BR><!-- google_ad_section_start(weight=ignore) -->
+      <H2>What's Here?</H2>
+      <UL>
+        <LI><B>Members:</B> 52,571 
+        <LI><B>Replies:</B> 232,750 
+        <LI><B>Topics:</B> 35,022 
+        <LI><B>Snippets:</B> 1,163 
+        <LI><B>Tutorials:</B> 244 
+        <LI><B>Total Online:</B> 1,629 
+        <LI><B>Members:</B> 47 
+        <LI><B>Guests:</B> 1,581 </LI></UL><!-- google_ad_section_end --><BR><!-- google_ad_section_start(weight=ignore) -->
+      <H2>Who's Online?</H2>
+      <UL>
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=52989" 
+        rel=nofollow>nealgabriel45</A> 
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=52923" 
+        rel=nofollow>diln</A> 
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=12736" 
+        rel=nofollow>brainy_creature</A> 
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=34" 
+        rel=nofollow><SPAN 
+        style="FONT-WEIGHT: bold; COLOR: maroon; FONT-STYLE: italic">skyhawk133</SPAN></A> 
+
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=41370" 
+        rel=nofollow><SPAN style="COLOR: #cc6633">csmanoj</SPAN></A> 
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=41101" 
+        rel=nofollow>Flynn</A> 
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=52987" 
+        rel=nofollow>escapt</A> 
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=6472" 
+        rel=nofollow><SPAN style="COLOR: #999933">Xenon</SPAN></A> 
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=38535" 
+        rel=nofollow>bmcc81</A> 
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=52937" 
+        rel=nofollow>jitinl</A> 
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=52986" 
+        rel=nofollow>Lara penn</A> 
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=1570" 
+        rel=nofollow><SPAN 
+        style="FONT-WEIGHT: bold; COLOR: green; FONT-STYLE: italic">Thorian</SPAN></A> 
+
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=52985" 
+        rel=nofollow>gizmo420</A> 
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=52979" 
+        rel=nofollow>poplife</A> 
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=48384" 
+        rel=nofollow>piee</A> </LI></UL><!-- google_ad_section_end --></DIV><IMG 
+      height=1 
+      src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/spacer.gif" 
+      width=160> </TD>
+    <TD class=content vAlign=top width="100%"><!-- 		<table class="cs_promo">
+			<tr>
+				<td><a href="http://www.dreamincode.net/forums/index.php?showtopic=19383"><img src="http://www.dreamincode.net/code/themes/cs_promo.png" alt="Submit a Code Snippet and get a chance to win a &lt;/dream.in.code&gt; 1GB Thumb Drive!" /></a></td>
+			</tr>
+		</table> --><BR>
+      <DIV id=tehNav><SPAN class=navPath><SPAN><IMG 
+      src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/nav.gif">&nbsp;
+      <H1><A href="http://www.dreamincode.net/code/browse.php?cid=0">Code 
+      Snippets</A></H1><IMG 
+      src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/nav.gif"> 
+
+      <H1><A 
+      href="http://www.dreamincode.net/code/browse.php?cid=2">C++</A></H1></SPAN></SPAN><BR><SPAN 
+      name="KonaFilter">
+      <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=titles colSpan=3><STRONG>Welcome to 
+          Dream.In.Code!</STRONG></TD></TR>
+        <TR>
+          <TD class=tr2 vAlign=center align=middle><SPAN>
+            <SCRIPT language=JavaScript type=text/javascript><!--
+/* openads=http://www.dreamincode.net/ads bannerid=77 zoneid=18 source= */
+if (typeof phpAds_adg == 'undefined') {
+	document.write('<scr'+'ipt language="JavaScript" type="text/javascript" src="http://www.dreamincode.net/ads/adg.js"></scr'+'ipt>');
+}
+//--></SCRIPT>
+
+            <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-9822709549810875";
+google_alternate_color = "F7F7F7";
+google_ad_width = 336;
+google_ad_height = 280;
+google_ad_format = "336x280_as";
+google_ad_type = "text_image";
+//2007-06-17: 336x280 ROS (Guests) - Red
+google_ad_channel = "3451615710";
+google_color_border = "F7F7F7";
+google_color_bg = "F7F7F7";
+google_color_link = "FF0000";
+google_color_text = "000000";
+google_color_url = "000000";
+//-->
+</SCRIPT>
+
+            <SCRIPT 
+            src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/show_ads.js" 
+            type=text/javascript>
+</SCRIPT>
+            </SPAN>
+            <DIV id=beacon_77 
+            style="LEFT: 0px; VISIBILITY: hidden; POSITION: absolute; TOP: 0px"><IMG 
+            style="WIDTH: 0px; HEIGHT: 0px" height=0 alt="" 
+            src="D:\kk\Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files\adlog(2).gif" 
+            width=0></DIV></TD>
+          <TD class=tr2 vAlign=center align=middle width="100%">
+            <DIV style="FONT-SIZE: 22px" 
+            align=center><!-- <strong></strong> --></DIV>
+            <DIV style="FONT-SIZE: 18px" align=center><B><A 
+            href="http://www.dreamincode.net/forums/index.php?act=Reg&amp;CODE=00&amp;utm_campaign=Register&amp;utm_content=PleaseRegister"><SPAN 
+            style="FONT-WEIGHT: bold; COLOR: red; TEXT-DECORATION: underline">Getting 
+            Help is Easy:</SPAN></B></A> <BR><B><SPAN 
+            style="FONT-SIZE: 12px">Join Over 50,000 Programmers!</SPAN></B> 
+            <BR><BR>
+            <TABLE width=180 align=center>
+              <TBODY>
+              <TR>
+                <TD><SPAN style="FONT-SIZE: 13px; COLOR: black">
+                  <OL>
+                    <LI><B><A 
+                    href="http://www.dreamincode.net/forums/index.php?act=Reg&amp;CODE=00&amp;utm_campaign=Register&amp;utm_content=PleaseRegister"><U>Join</U></A></B> 
+                    For Free 
+                    <LI><B><A 
+                    href="http://www.dreamincode.net/forums/index.php?act=Reg&amp;CODE=00&amp;utm_campaign=Register&amp;utm_content=PleaseRegister"><U>Post</U></A></B> 
+                    Your Question 
+                    <LI><B><A 
+                    href="http://www.dreamincode.net/forums/index.php?act=Reg&amp;CODE=00&amp;utm_campaign=Register&amp;utm_content=PleaseRegister"><U>Get</U></A></B> 
+                    Expert Help 
+            </LI></OL></SPAN></TD></TR></TBODY></TABLE></DIV><BR><B>OR</B> 
+            <BR><BR><B><A 
+            href="http://www.kasamba.com/Advice/Browse/ViewCategory.aspx?CatID=70&amp;DesID=4&amp;SortBy=9&amp;img=17&amp;kbid=3005"><SPAN 
+            style="FONT-WEIGHT: bolder; FONT-SIZE: 14px; COLOR: red; TEXT-DECORATION: underline"><B>Chat 
+            With An Expert <I>LIVE!</I></B></SPAN><BR><BR></A><B>Register to 
+            make this box and other ads go away.</B> 
+      </B></TD></TR></TBODY></TABLE></SPAN><BR>
+      <H2 class=titular><SPAN><A class=snipTitle 
+      href="http://www.dreamincode.net/code/snippet1084.htm">Big Integer Using 
+      Array to Subtraction</A></SPAN></H2>
+      <H2 class=snipDescription>
+      <DIV class=tehUnderling></DIV></H2></DIV>
+      <SCRIPT language=Javascript>
+	function openSmallWindow(url)  {
+		window.open(url,"smallWindow","width=600,height=290,resizable=yes");
+		return false;
+	}
+</SCRIPT>
+
+      <TABLE class=omgwtfbbq cellSpacing=5 cellPadding=4 width="100%" border=0><!--<tr> 
+                      <td nowrap="nowrap" colspan="2" class=""> <h1><B>Big Integer Using Array to Subtraction</b></h1> </td>
+					 </tr>-->
+        <TBODY>
+        <TR>
+          <TD class=""><B>Submitted By:</B> <A 
+            href="http://forums.dreamincode.net/index.php?showuser=32093" 
+            rel=nofollow>imamkomc</A> </TD>
+          <TD class="" vAlign=center width="20%" rowSpan=3><!-- onmouseover="this.bgColor='#CCCCCC'" onmouseout="this.bgColor='#E1E1E1'" -->
+            <TABLE cellSpacing=0 cellPadding=0 align=right border=0>
+              <TBODY>
+              <TR>
+                <TD><B>Actions:</B><BR><A 
+                  href="http://www.dreamincode.net/code/snippet1084.htm#addComment">Add 
+                  Comment</A><BR></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD class=""><B>Views:</B> 379 </TD></TR>
+        <TR>
+          <TD class="">
+            <H2 class=lulz><B>Language:</B> C++</H2></TD></TR>
+        <TR>
+          <TD class=""><B>Last Modified:</B> 2007-07-10 06:14:25 </TD></TR><!--s</table>--><!-- DISPLAY THE CODE HERE --><!--<table width="100%" cellpadding="0" cellspacing="0" border="0">
+
+		<tr>
+			<td class="titles"><b>Snippet</b></td>
+
+
+
+		</tr>-->
+        <TR 
+        style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px">
+          <TD class=snippet style="WIDTH: 100%" vAlign=top align=middle 
+          colSpan=2>
+            <DIV id=tehSnippetoz align=left>
+            <H2 class=titular><SPAN>Snippet</SPAN></H2><BR>
+            <DIV>
+            <OL>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #339900">#include &lt;iostream.h&gt;</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #339900">#include &lt;conio.h&gt;</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #339900">#include &lt;stdio.h&gt;</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #339900">#include &lt;math.h&gt;</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #339900">#include &lt;stdlib.h&gt;</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #339900">#include &lt;fstream.h&gt;</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #339900">#include &lt;string.h&gt;</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #339900">#define bit 1024 //can be 
+              change</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #0000ff">void</SPAN> main <SPAN 
+              style="COLOR: #000000">(</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">ofstream 
+              file_output;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">file_output.<SPAN 
+              style="COLOR: #00eeff">open</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN><SPAN 
+              style="COLOR: #666666">"result_sub.txt"</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #ff0000">//char num1[100],num2[100];</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #0000ff">char</SPAN> *num1,*num2;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #0000ff">int</SPAN> 
+              ip,iq,loop,i,j,k,diff,*p,*q,*result_sub,index,check_zero;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #ff0000">//cout&lt;&lt;"nilai p = 
+              ";cin.getline(num1,100);</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #ff0000">//cout&lt;&lt;"nilai q = 
+              ";cin.getline(num2,100);</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">num1=<SPAN 
+              style="COLOR: #666666">"10018237892752837592357923756"</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">num2=<SPAN 
+              style="COLOR: #666666">"125723587239572395783925789238523859023805"</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">ip=<SPAN 
+              style="COLOR: #0000dd">strlen</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>num1<SPAN 
+              style="COLOR: #000000">)</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">iq=<SPAN 
+              style="COLOR: #0000dd">strlen</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>num2<SPAN 
+              style="COLOR: #000000">)</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">file_output&lt;&lt;<SPAN 
+              style="COLOR: #666666">"<SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN>length num1 = 
+              "</SPAN>&lt;&lt;ip&lt;&lt;<SPAN style="COLOR: #666666">" digit = 
+              "</SPAN>&lt;&lt;ip*<SPAN 
+              style="COLOR: #0000dd">8</SPAN>&lt;&lt;<SPAN 
+              style="COLOR: #666666">" bit"</SPAN>&lt;&lt;<SPAN 
+              style="COLOR: #666666">"<SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN>"</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;file_output&lt;&lt;<SPAN style="COLOR: #666666">"length num2 
+              = "</SPAN>&lt;&lt;iq&lt;&lt;<SPAN style="COLOR: #666666">" digit = 
+              "</SPAN>&lt;&lt;iq*<SPAN 
+              style="COLOR: #0000dd">8</SPAN>&lt;&lt;<SPAN 
+              style="COLOR: #666666">" bit"</SPAN>&lt;&lt;<SPAN 
+              style="COLOR: #666666">"<SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN><SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN>"</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;cout&lt;&lt;<SPAN style="COLOR: #666666">"p = 
+              "</SPAN>&lt;&lt;num1&lt;&lt;<SPAN style="COLOR: #666666">"<SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN>"</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;cout&lt;&lt;<SPAN style="COLOR: #666666">"q = 
+              "</SPAN>&lt;&lt;num2&lt;&lt;<SPAN style="COLOR: #666666">"<SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN><SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN>"</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;file_output&lt;&lt;<SPAN style="COLOR: #666666">"p = 
+              "</SPAN>&lt;&lt;num1&lt;&lt;<SPAN style="COLOR: #666666">"<SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN>"</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;file_output&lt;&lt;<SPAN style="COLOR: #666666">"q = 
+              "</SPAN>&lt;&lt;num2&lt;&lt;<SPAN style="COLOR: #666666">"<SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN>"</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">cout&lt;&lt;<SPAN 
+              style="COLOR: #666666">"length num1 = 
+              "</SPAN>&lt;&lt;ip&lt;&lt;<SPAN style="COLOR: #666666">" digit = 
+              "</SPAN>&lt;&lt;ip*<SPAN 
+              style="COLOR: #0000dd">8</SPAN>&lt;&lt;<SPAN 
+              style="COLOR: #666666">" bit"</SPAN>&lt;&lt;<SPAN 
+              style="COLOR: #666666">"<SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN>"</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">cout&lt;&lt;<SPAN 
+              style="COLOR: #666666">"length num2 = 
+              "</SPAN>&lt;&lt;iq&lt;&lt;<SPAN style="COLOR: #666666">" digit = 
+              "</SPAN>&lt;&lt;iq*<SPAN 
+              style="COLOR: #0000dd">8</SPAN>&lt;&lt;<SPAN 
+              style="COLOR: #666666">" bit"</SPAN>&lt;&lt;<SPAN 
+              style="COLOR: #666666">"<SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN>"</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">p=<SPAN 
+              style="COLOR: #0000dd">new</SPAN> <SPAN 
+              style="COLOR: #0000ff">int</SPAN><SPAN 
+              style="COLOR: #000000">[</SPAN>bit<SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">q=<SPAN 
+              style="COLOR: #0000dd">new</SPAN> <SPAN 
+              style="COLOR: #0000ff">int</SPAN><SPAN 
+              style="COLOR: #000000">[</SPAN>bit<SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">result_sub=<SPAN 
+              style="COLOR: #0000dd">new</SPAN> <SPAN 
+              style="COLOR: #0000ff">int</SPAN><SPAN 
+              style="COLOR: #000000">[</SPAN>bit<SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>ip&gt;iq<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp;<SPAN style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;loop=ip;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;<SPAN style="COLOR: #0000ff">for</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>i=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;i&lt;=ip;i++<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; <SPAN style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; p<SPAN style="COLOR: #000000">[</SPAN>i<SPAN 
+              style="COLOR: #000000">]</SPAN>=num1<SPAN 
+              style="COLOR: #000000">[</SPAN>i-<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>-<SPAN 
+              style="COLOR: #0000dd">48</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; cout&lt;&lt;<SPAN style="COLOR: #666666">"<SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN>"</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;diff=<SPAN style="COLOR: #0000dd">abs</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>ip-iq<SPAN 
+              style="COLOR: #000000">)</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;<SPAN style="COLOR: #0000ff">for</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>j=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;j&lt;=ip;j++<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; <SPAN style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>j&lt;=diff<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;q<SPAN 
+              style="COLOR: #000000">[</SPAN>j<SPAN 
+              style="COLOR: #000000">]</SPAN>=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">else</SPAN> <SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>j&gt;diff<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;index=diff+<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;<SPAN style="COLOR: #ff0000">//for 
+              index = 0,1,..</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;q<SPAN 
+              style="COLOR: #000000">[</SPAN>j<SPAN 
+              style="COLOR: #000000">]</SPAN>=num2<SPAN 
+              style="COLOR: #000000">[</SPAN>j-index<SPAN 
+              style="COLOR: #000000">]</SPAN>-<SPAN 
+              style="COLOR: #0000dd">48</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;result_sub<SPAN style="COLOR: #000000">[</SPAN>loop<SPAN 
+              style="COLOR: #000000">]</SPAN>=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;<SPAN style="COLOR: #0000ff">for</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>k=loop;k&gt;=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;k--<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; <SPAN style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>+=p<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>-q<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN 
+              style="COLOR: #ff0000">//cout&lt;&lt;result_sub[k]&lt;&lt;" 
+              ";</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>&lt;<SPAN 
+              style="COLOR: #0000dd">0</SPAN> &amp;&amp; k!=<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>=result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>+<SPAN 
+              style="COLOR: #0000dd">10</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #ff0000">//cout&lt;&lt;result_sub[k]&lt;&lt;" 
+              ";</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k-<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>=-<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">else</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>=result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k-<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;<SPAN style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;<SPAN style="COLOR: #0000ff">else</SPAN> <SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>ip&lt;iq<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp;<SPAN style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;loop=iq;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;<SPAN style="COLOR: #0000ff">for</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>i=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;i&lt;=iq;i++<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; <SPAN style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; q<SPAN style="COLOR: #000000">[</SPAN>i<SPAN 
+              style="COLOR: #000000">]</SPAN>=num2<SPAN 
+              style="COLOR: #000000">[</SPAN>i-<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>-<SPAN 
+              style="COLOR: #0000dd">48</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; cout&lt;&lt;<SPAN style="COLOR: #666666">"<SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN>"</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;diff=<SPAN style="COLOR: #0000dd">abs</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>ip-iq<SPAN 
+              style="COLOR: #000000">)</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;<SPAN style="COLOR: #0000ff">for</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>j=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;j&lt;=iq;j++<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; <SPAN style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>j&lt;=diff<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;p<SPAN 
+              style="COLOR: #000000">[</SPAN>j<SPAN 
+              style="COLOR: #000000">]</SPAN>=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">else</SPAN> <SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>j&gt;diff<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;index=diff+<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;<SPAN style="COLOR: #ff0000">//for 
+              index = 0,1,..</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;p<SPAN 
+              style="COLOR: #000000">[</SPAN>j<SPAN 
+              style="COLOR: #000000">]</SPAN>=num1<SPAN 
+              style="COLOR: #000000">[</SPAN>j-index<SPAN 
+              style="COLOR: #000000">]</SPAN>-<SPAN 
+              style="COLOR: #0000dd">48</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;result_sub<SPAN style="COLOR: #000000">[</SPAN>loop<SPAN 
+              style="COLOR: #000000">]</SPAN>=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;<SPAN style="COLOR: #0000ff">for</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>k=loop;k&gt;=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;k--<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; <SPAN style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>+=q<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>-p<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN 
+              style="COLOR: #ff0000">//cout&lt;&lt;result_sub[k]&lt;&lt;" 
+              ";</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>&lt;<SPAN 
+              style="COLOR: #0000dd">0</SPAN> &amp;&amp; k!=<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>=result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>+<SPAN 
+              style="COLOR: #0000dd">10</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #ff0000">//cout&lt;&lt;result_sub[k]&lt;&lt;" 
+              ";</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k-<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>=-<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">else</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>=result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k-<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>k==<SPAN 
+              style="COLOR: #0000dd">1</SPAN> &amp;&amp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>!=<SPAN 
+              style="COLOR: #0000dd">0</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>=-<SPAN 
+              style="COLOR: #0000dd">1</SPAN>*result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #0000ff">else</SPAN> <SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>k==<SPAN 
+              style="COLOR: #0000dd">1</SPAN> &amp;&amp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>==<SPAN 
+              style="COLOR: #0000dd">0</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k+<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>=-<SPAN 
+              style="COLOR: #0000dd">1</SPAN>*result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k+<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;<SPAN style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;<SPAN style="COLOR: #0000ff">else</SPAN> <SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>ip==iq<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp;<SPAN style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #ff0000">//cout&lt;&lt;"iq 
+              ="&lt;&lt;iq&lt;&lt;"\n";</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">int</SPAN> ii=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>,jj=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>,kk=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">for</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>i=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;i&lt;=iq;i++<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;p<SPAN 
+              style="COLOR: #000000">[</SPAN>i<SPAN 
+              style="COLOR: #000000">]</SPAN>=num1<SPAN 
+              style="COLOR: #000000">[</SPAN>i-<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>-<SPAN 
+              style="COLOR: #0000dd">48</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #ff0000">//cout&lt;&lt;"p["&lt;&lt;i&lt;&lt;"]="&lt;&lt;p[i]&lt;&lt;"\n";</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;q<SPAN 
+              style="COLOR: #000000">[</SPAN>i<SPAN 
+              style="COLOR: #000000">]</SPAN>=num2<SPAN 
+              style="COLOR: #000000">[</SPAN>i-<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>-<SPAN 
+              style="COLOR: #0000dd">48</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #ff0000">//cout&lt;&lt;"q["&lt;&lt;i&lt;&lt;"]="&lt;&lt;q[i-1]&lt;&lt;"\n";</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #0000ff">if</SPAN> <SPAN 
+              style="COLOR: #000000">(</SPAN>p<SPAN 
+              style="COLOR: #000000">[</SPAN>i<SPAN 
+              style="COLOR: #000000">]</SPAN>&lt;q<SPAN 
+              style="COLOR: #000000">[</SPAN>i<SPAN 
+              style="COLOR: #000000">]</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ii=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #0000ff">else</SPAN> <SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>p<SPAN 
+              style="COLOR: #000000">[</SPAN>i<SPAN 
+              style="COLOR: #000000">]</SPAN>&gt;q<SPAN 
+              style="COLOR: #000000">[</SPAN>i<SPAN 
+              style="COLOR: #000000">]</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; jj=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #0000ff">else</SPAN> <SPAN 
+              style="COLOR: #0000ff">if</SPAN> <SPAN 
+              style="COLOR: #000000">(</SPAN>p<SPAN 
+              style="COLOR: #000000">[</SPAN>i<SPAN 
+              style="COLOR: #000000">]</SPAN>==q<SPAN 
+              style="COLOR: #000000">[</SPAN>i<SPAN 
+              style="COLOR: #000000">]</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; kk++;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; <SPAN style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>ii==<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; loop=iq;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">for</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>i=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;i&lt;=iq;i++<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;p<SPAN 
+              style="COLOR: #000000">[</SPAN>i<SPAN 
+              style="COLOR: #000000">]</SPAN>=num1<SPAN 
+              style="COLOR: #000000">[</SPAN>i-<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>-<SPAN 
+              style="COLOR: #0000dd">48</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;q<SPAN 
+              style="COLOR: #000000">[</SPAN>i<SPAN 
+              style="COLOR: #000000">]</SPAN>=num2<SPAN 
+              style="COLOR: #000000">[</SPAN>i-<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>-<SPAN 
+              style="COLOR: #0000dd">48</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cout&lt;&lt;<SPAN 
+              style="COLOR: #666666">"<SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN>"</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; diff=<SPAN 
+              style="COLOR: #0000dd">abs</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>ip-iq<SPAN 
+              style="COLOR: #000000">)</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">for</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>j=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;j&lt;=iq;j++<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>j&lt;=diff<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p<SPAN 
+              style="COLOR: #000000">[</SPAN>j<SPAN 
+              style="COLOR: #000000">]</SPAN>=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #0000ff">else</SPAN> <SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>j&gt;diff<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index=diff+<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;<SPAN style="COLOR: #ff0000">//for 
+              index = 0,1,..</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p<SPAN 
+              style="COLOR: #000000">[</SPAN>j<SPAN 
+              style="COLOR: #000000">]</SPAN>=num1<SPAN 
+              style="COLOR: #000000">[</SPAN>j-index<SPAN 
+              style="COLOR: #000000">]</SPAN>-<SPAN 
+              style="COLOR: #0000dd">48</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>loop<SPAN 
+              style="COLOR: #000000">]</SPAN>=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">for</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>k=loop;k&gt;=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;k--<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>+=q<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>-p<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #ff0000">//cout&lt;&lt;result_sub[k]&lt;&lt;" 
+              ";</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>&lt;<SPAN 
+              style="COLOR: #0000dd">0</SPAN> &amp;&amp; k!=<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>=result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>+<SPAN 
+              style="COLOR: #0000dd">10</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #ff0000">//cout&lt;&lt;result_sub[k]&lt;&lt;" 
+              ";</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k-<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>=-<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #0000ff">else</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>=result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k-<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>k==<SPAN 
+              style="COLOR: #0000dd">1</SPAN> &amp;&amp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>!=<SPAN 
+              style="COLOR: #0000dd">0</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+              &nbsp;<SPAN style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+              &nbsp;result_sub<SPAN style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>=-<SPAN 
+              style="COLOR: #0000dd">1</SPAN>*result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #0000ff">else</SPAN> <SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>k==<SPAN 
+              style="COLOR: #0000dd">1</SPAN> &amp;&amp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>==<SPAN 
+              style="COLOR: #0000dd">0</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+              &nbsp;<SPAN style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+              &nbsp;result_sub<SPAN style="COLOR: #000000">[</SPAN>k+<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>=-<SPAN 
+              style="COLOR: #0000dd">1</SPAN>*result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k+<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">else</SPAN> <SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>jj==<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;loop=ip;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">for</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>i=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;i&lt;=ip;i++<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;p<SPAN 
+              style="COLOR: #000000">[</SPAN>i<SPAN 
+              style="COLOR: #000000">]</SPAN>=num1<SPAN 
+              style="COLOR: #000000">[</SPAN>i-<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>-<SPAN 
+              style="COLOR: #0000dd">48</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cout&lt;&lt;<SPAN 
+              style="COLOR: #666666">"<SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN>"</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; diff=<SPAN 
+              style="COLOR: #0000dd">abs</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>ip-iq<SPAN 
+              style="COLOR: #000000">)</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">for</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>j=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;j&lt;=ip;j++<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>j&lt;=diff<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; q<SPAN 
+              style="COLOR: #000000">[</SPAN>j<SPAN 
+              style="COLOR: #000000">]</SPAN>=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #0000ff">else</SPAN> <SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>j&gt;diff<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; index=diff+<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;<SPAN style="COLOR: #ff0000">//for 
+              index = 0,1,..</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; q<SPAN 
+              style="COLOR: #000000">[</SPAN>j<SPAN 
+              style="COLOR: #000000">]</SPAN>=num2<SPAN 
+              style="COLOR: #000000">[</SPAN>j-index<SPAN 
+              style="COLOR: #000000">]</SPAN>-<SPAN 
+              style="COLOR: #0000dd">48</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>loop<SPAN 
+              style="COLOR: #000000">]</SPAN>=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">for</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>k=loop;k&gt;=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;k--<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>+=p<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>-q<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #ff0000">//cout&lt;&lt;result_sub[k]&lt;&lt;" 
+              ";</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>&lt;<SPAN 
+              style="COLOR: #0000dd">0</SPAN> &amp;&amp; k!=<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>=result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>+<SPAN 
+              style="COLOR: #0000dd">10</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #ff0000">//cout&lt;&lt;result_sub[k]&lt;&lt;" 
+              ";</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k-<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>=-<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #0000ff">else</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>=result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k-<SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">else</SPAN> <SPAN 
+              style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>kk==iq<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;loop=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN><SPAN 
+              style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">]</SPAN>=<SPAN 
+              style="COLOR: #0000dd">0</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN style="COLOR: #000000">}</SPAN> 
+              </DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;<SPAN style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;<SPAN style="COLOR: #ff0000">//Display result 
+              subtraction</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;cout&lt;&lt;<SPAN style="COLOR: #666666">"<SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN>Display result 
+              subtraction = "</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;file_output&lt;&lt;<SPAN style="COLOR: #666666">"<SPAN 
+              style="FONT-WEIGHT: bold; COLOR: #666666">\n</SPAN>Display result 
+              subtraction = "</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;check_zero=<SPAN style="COLOR: #0000dd">1</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;<SPAN style="COLOR: #0000ff">while</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>check_zero<SPAN 
+              style="COLOR: #000000">]</SPAN>==<SPAN 
+              style="COLOR: #0000dd">0</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN><SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;check_zero++;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp;<SPAN style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp;<SPAN style="COLOR: #0000ff">for</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>k=<SPAN 
+              style="COLOR: #0000dd">1</SPAN>;k&lt;=loop;k++<SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; <SPAN style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">if</SPAN><SPAN 
+              style="COLOR: #000000">(</SPAN>k&lt;check_zero &amp;&amp; 
+              loop!=<SPAN style="COLOR: #0000dd">1</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #0000ff">continue</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #0000ff">else</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">{</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cout&lt;&lt;result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp; 
+              &nbsp;file_output&lt;&lt;result_sub<SPAN 
+              style="COLOR: #000000">[</SPAN>k<SPAN 
+              style="COLOR: #000000">]</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; &nbsp; &nbsp;<SPAN 
+              style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">&nbsp; 
+              &nbsp; &nbsp; <SPAN style="COLOR: #000000">}</SPAN></DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace">getch 
+              <SPAN style="COLOR: #000000">(</SPAN><SPAN 
+              style="COLOR: #000000">)</SPAN>;</DIV>
+              <LI>
+              <DIV 
+              style="FONT-WEIGHT: normal; FONT-FAMILY: 'Courier New', Courier, monospace"><SPAN 
+              style="COLOR: #000000">}</SPAN> </DIV></LI></OL></DIV></DIV><BR>
+            <DIV align=left>
+            <H2 class=titular><SPAN>Copy &amp; Paste</SPAN></H2>
+            <DIV style="FLOAT: right">
+            <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-9822709549810875";
+google_ad_width = 200;
+google_ad_height = 200;
+google_ad_format = "200x200_as";
+google_ad_type = "text_image";
+//2007-10-20: 200x200 Code Snippets (Orange)
+google_ad_channel = "7043718947";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "f16d12";
+google_color_text = "000000";
+google_color_url = "4f6c84";
+//-->
+</SCRIPT>
+
+            <SCRIPT 
+            src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/show_ads.js" 
+            type=text/javascript>
+</SCRIPT>
+            </DIV><TEXTAREA rows=12 cols=60>#include &lt;iostream.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;fstream.h&gt;
+#include &lt;string.h&gt;
+#define bit 1024 //can be change
+
+void main ()
+{
+ofstream file_output;
+file_output.open("result_sub.txt");
+//char num1[100],num2[100];
+char *num1,*num2;
+int ip,iq,loop,i,j,k,diff,*p,*q,*result_sub,index,check_zero;
+//cout&lt;&lt;"nilai p = ";cin.getline(num1,100);
+//cout&lt;&lt;"nilai q = ";cin.getline(num2,100);
+num1="10018237892752837592357923756";
+num2="125723587239572395783925789238523859023805";
+
+ip=strlen(num1);
+iq=strlen(num2);
+
+file_output&lt;&lt;"\nlength num1 = "&lt;&lt;ip&lt;&lt;" digit = "&lt;&lt;ip*8&lt;&lt;" bit"&lt;&lt;"\n";
+   file_output&lt;&lt;"length num2 = "&lt;&lt;iq&lt;&lt;" digit = "&lt;&lt;iq*8&lt;&lt;" bit"&lt;&lt;"\n\n";
+   cout&lt;&lt;"p = "&lt;&lt;num1&lt;&lt;"\n";
+   cout&lt;&lt;"q = "&lt;&lt;num2&lt;&lt;"\n\n";
+   file_output&lt;&lt;"p = "&lt;&lt;num1&lt;&lt;"\n";
+   file_output&lt;&lt;"q = "&lt;&lt;num2&lt;&lt;"\n";
+
+cout&lt;&lt;"length num1 = "&lt;&lt;ip&lt;&lt;" digit = "&lt;&lt;ip*8&lt;&lt;" bit"&lt;&lt;"\n";
+cout&lt;&lt;"length num2 = "&lt;&lt;iq&lt;&lt;" digit = "&lt;&lt;iq*8&lt;&lt;" bit"&lt;&lt;"\n";
+
+p=new int[bit];
+q=new int[bit];
+result_sub=new int[bit];
+if(ip&gt;iq)
+     {
+   loop=ip;
+   for(i=1;i&lt;=ip;i++)
+        {
+      p[i]=num1[i-1]-48;
+      }
+      cout&lt;&lt;"\n";
+   diff=abs(ip-iq);
+   for(j=1;j&lt;=ip;j++)
+        {
+      if(j&lt;=diff)
+           {
+         q[j]=0;
+         }
+      else if(j&gt;diff)
+           {
+         index=diff+1;//for index = 0,1,..
+           q[j]=num2[j-index]-48;
+           }
+      }
+   result_sub[loop]=0;
+   for(k=loop;k&gt;=1;k--)
+        {
+      result_sub[k]+=p[k]-q[k];
+      //cout&lt;&lt;result_sub[k]&lt;&lt;" ";
+      if(result_sub[k]&lt;0 &amp;&amp; k!=1)
+           {
+         result_sub[k]=result_sub[k]+10;
+         //cout&lt;&lt;result_sub[k]&lt;&lt;" ";
+         result_sub[k-1]=-1;
+         }
+      else
+           {
+         result_sub[k]=result_sub[k];
+         result_sub[k-1]=0;
+         }
+      }
+   }
+   else if(ip&lt;iq)
+     {
+   loop=iq;
+   for(i=1;i&lt;=iq;i++)
+        {
+      q[i]=num2[i-1]-48;
+      }
+      cout&lt;&lt;"\n";
+   diff=abs(ip-iq);
+   for(j=1;j&lt;=iq;j++)
+        {
+      if(j&lt;=diff)
+           {
+         p[j]=0;
+         }
+      else if(j&gt;diff)
+           {
+         index=diff+1;//for index = 0,1,..
+           p[j]=num1[j-index]-48;
+           }
+      }
+   result_sub[loop]=0;
+   for(k=loop;k&gt;=1;k--)
+        {
+      result_sub[k]+=q[k]-p[k];
+      //cout&lt;&lt;result_sub[k]&lt;&lt;" ";
+      if(result_sub[k]&lt;0 &amp;&amp; k!=1)
+           {
+         result_sub[k]=result_sub[k]+10;
+         //cout&lt;&lt;result_sub[k]&lt;&lt;" ";
+         result_sub[k-1]=-1;
+         }
+      else
+           {
+         result_sub[k]=result_sub[k];
+         result_sub[k-1]=0;
+         if(k==1 &amp;&amp; result_sub[k]!=0)
+              {
+            result_sub[k]=-1*result_sub[k];
+            }
+         else if(k==1 &amp;&amp; result_sub[k]==0)
+              {
+            result_sub[k+1]=-1*result_sub[k+1];
+            }
+         }
+      }
+   }
+   else if(ip==iq)
+     {
+        //cout&lt;&lt;"iq ="&lt;&lt;iq&lt;&lt;"\n";
+      int ii=0,jj=0,kk=0;
+      for(i=1;i&lt;=iq;i++)
+             {
+           p[i]=num1[i-1]-48;
+           //cout&lt;&lt;"p["&lt;&lt;i&lt;&lt;"]="&lt;&lt;p[i]&lt;&lt;"\n";
+           q[i]=num2[i-1]-48;
+           //cout&lt;&lt;"q["&lt;&lt;i&lt;&lt;"]="&lt;&lt;q[i-1]&lt;&lt;"\n";
+             if (p[i]&lt;q[i])
+                {
+                ii=1;
+              }
+                else if(p[i]&gt;q[i])
+                {
+              jj=1;
+              }
+           else if (p[i]==q[i])
+                {
+              kk++;
+              }
+           }
+         
+    if(ii==1)
+         {
+        loop=iq;
+        for(i=1;i&lt;=iq;i++)
+             {
+           p[i]=num1[i-1]-48;
+           q[i]=num2[i-1]-48;
+           }
+           cout&lt;&lt;"\n";
+        diff=abs(ip-iq);
+        for(j=1;j&lt;=iq;j++)
+             {
+           if(j&lt;=diff)
+                {
+              p[j]=0;
+              }
+           else if(j&gt;diff)
+                {
+              index=diff+1;//for index = 0,1,..
+                p[j]=num1[j-index]-48;
+                }
+           }
+        result_sub[loop]=0;
+        for(k=loop;k&gt;=1;k--)
+             {
+           result_sub[k]+=q[k]-p[k];
+           //cout&lt;&lt;result_sub[k]&lt;&lt;" ";
+           if(result_sub[k]&lt;0 &amp;&amp; k!=1)
+                {
+              result_sub[k]=result_sub[k]+10;
+              //cout&lt;&lt;result_sub[k]&lt;&lt;" ";
+              result_sub[k-1]=-1;
+              }
+           else
+                {
+              result_sub[k]=result_sub[k];
+              result_sub[k-1]=0;
+              if(k==1 &amp;&amp; result_sub[k]!=0)
+                   {
+                 result_sub[k]=-1*result_sub[k];
+                 }
+              else if(k==1 &amp;&amp; result_sub[k]==0)
+                   {
+                 result_sub[k+1]=-1*result_sub[k+1];
+                 }
+              }
+           }
+      }
+      else if(jj==1)
+           {
+           loop=ip;
+        for(i=1;i&lt;=ip;i++)
+             {
+           p[i]=num1[i-1]-48;
+           }
+           cout&lt;&lt;"\n";
+        diff=abs(ip-iq);
+        for(j=1;j&lt;=ip;j++)
+             {
+           if(j&lt;=diff)
+                {
+              q[j]=0;
+              }
+           else if(j&gt;diff)
+                {
+              index=diff+1;//for index = 0,1,..
+                q[j]=num2[j-index]-48;
+                }
+           }
+        result_sub[loop]=0;
+        for(k=loop;k&gt;=1;k--)
+             {
+           result_sub[k]+=p[k]-q[k];
+           //cout&lt;&lt;result_sub[k]&lt;&lt;" ";
+           if(result_sub[k]&lt;0 &amp;&amp; k!=1)
+                {
+              result_sub[k]=result_sub[k]+10;
+              //cout&lt;&lt;result_sub[k]&lt;&lt;" ";
+              result_sub[k-1]=-1;
+              }
+           else
+                {
+              result_sub[k]=result_sub[k];
+              result_sub[k-1]=0;
+              }
+           }
+         }
+      else if(kk==iq)
+           {
+         loop=1;
+         result_sub[1]=0;
+         } 
+   }
+   //Display result subtraction
+   cout&lt;&lt;"\nDisplay result subtraction = ";
+   file_output&lt;&lt;"\nDisplay result subtraction = ";
+   check_zero=1;
+   while(result_sub[check_zero]==0){
+   check_zero++;
+   }
+
+     for(k=1;k&lt;=loop;k++)
+        {
+      if(k&lt;check_zero &amp;&amp; loop!=1)
+           {
+         continue;
+         }
+      else
+           {
+           cout&lt;&lt;result_sub[k];
+           file_output&lt;&lt;result_sub[k];
+         }
+      }
+getch ();
+}</TEXTAREA> </DIV></TD></TR>
+        <TR>
+          <TD colSpan=2><BR>
+            <TABLE id=viewTehComments cellPadding=0 width="100%" border=0>
+              <FORM action=comments.php?printable=1 method=post><!--<tr><td nowrap="nowrap" colspan="2" class="titles"> <h1><B>Comments for Big Integer Using Array to Subtraction</b></h1> </td></tr>-->
+              <TBODY>
+              <TR>
+                <TD class="" noWrap colSpan=2>
+                  <H2 class=titular><SPAN>Comments
+                  <DIV class=tehUnderling></DIV></SPAN></H2><BR></TD></TR>
+              <TR class=comments>
+                <TD class=commsubject bgColor=#cccccc><A 
+                  name=lastComment></A><B><A 
+                  name=snippetComment1023></A>piee</B> 2007-10-22 
+                  01:21:51<BR><B>Subject:</B> </TD></TR>
+              <TR>
+                <TD class=commentbody>
+                  <P>may i know why do we need to MINUS 48 (line 214, 201, etc) 
+                  and ADD 10(line 177,etc) of the calculation area? don't quite 
+                  get that part. i tried replacing it with other integers but 
+                  that will not give the correct result. looking forward for 
+                  your feedback! thanks! </P></TD></TR></TBODY></TABLE><BR>
+            <TABLE id=addTehComments cellPadding=0 width="100%"><FORM 
+              method="post" action="comments.php?printable=1">
+              <TBODY>
+              <TR>
+                <TD class="" noWrap colSpan=2><A name=addComment></A>
+                  <H2 class=titular><SPAN>Add comment
+                  <DIV class=tehUnderling></DIV></SPAN></H2><BR></TD></TR>
+              <TR>
+                <TD>You must be registered and logged on to 
+                  &lt;/dream.in.code&gt; to leave 
+            comments.</TD></TR></FORM></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=1 cellPadding=2 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=right>
+            <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-9822709549810875";
+google_ad_width = 250;
+google_ad_height = 250;
+google_ad_format = "250x250_as";
+google_ad_type = "text_image";
+//2007-10-15: 250x250 Footer
+google_ad_channel = "5003297603";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_text = "000000";
+google_color_url = "4C4C4C";
+//-->
+</SCRIPT>
+
+            <SCRIPT 
+            src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/show_ads.js" 
+            type=text/javascript>
+</SCRIPT>
+          </TD>
+          <TD>
+            <DIV align=center>
+            <SCRIPT type=text/javascript>
+   e9 = new Object();
+   e9.size = "336x280";
+   e9.noAd = 1;
+</SCRIPT>
+
+            <SCRIPT 
+            src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/tags.js" 
+            type=text/javascript></SCRIPT>
+            </DIV></TD></TR></TBODY></TABLE><BR>
+      <DIV id=copyright>
+      <DIV align=center><BR><STRONG><A 
+      href="http://www.dreamincode.net/downloads/2007_MediaKit.pdf" 
+      rel=nofollow>Advertising</A><IMG 
+      src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/pdf.gif" 
+      border=0 valign="middle"> | <A href="http://www.dreamincode.net/?p=tos" 
+      rel=nofollow>Terms of Use</A> | <A 
+      href="http://www.dreamincode.net/?p=privacy" rel=nofollow>Privacy</A> | <A 
+      href="http://www.dreamincode.net/?p=about" rel=nofollow>About Us</A> | <A 
+      href="http://www.dreamincode.net/forums/lofiversion/">Site 
+      Map</A></STRONG> </DIV><BR>
+      <DIV align=center><A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f76.html">Programming 
+      Help</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f15.html">C 
+      and C++</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f21.html">Visual 
+      Basic</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f32.html">Java</A>&nbsp;| 
+      <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f67.html">VB.NET</A>&nbsp;| 
+      <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f84.html">C#</A>&nbsp;| 
+      <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f30.html">ASP.NET</A>&nbsp;| 
+      <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f28.html">PHP</A>&nbsp;| 
+      <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f31.html">ColdFusion 
+      Forum</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f29.html">Perl 
+      and Python</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f70.html">Ruby</A>&nbsp;| 
+      <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f14.html">Databases</A>&nbsp;| 
+      <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f62.html">Other 
+      Languages</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f69.html">Game 
+      Programming</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f82.html">Software 
+      Development</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f83.html">Industry 
+      News</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f78.html">Programming 
+      Tutorials</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f48.html">C++ 
+      Tutorials</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f51.html">Visual 
+      Basic Tutorials</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f50.html">Java 
+      Tutorials</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f47.html">PHP 
+      Tutorials</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f49.html">ColdFusion 
+      Tutorials</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f53.html">Linux 
+      Tutorials</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f54.html">Windows 
+      Tutorials</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f56.html">HTML/JavaScript 
+      Tutorials</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f57.html">CSS 
+      Tutorials</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f58.html">Flash 
+      Tutorials</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f64.html">Web 
+      Promotion Tutorials</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f44.html">Photoshop 
+      Tutorials</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f85.html">C# 
+      Tutorials</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f86.html">Software 
+      Development Tutorials</A>&nbsp;| <A 
+      href="http://www.dreamincode.net/forums/lofiversion/index.php/f87.html">Database 
+      Tutorials</A>&nbsp;| <BR><BR></DIV>
+      <DIV align=right>© 2007 MediaGroup1 LLC. All Rights Reserved.<BR>Version 
+      6.0.2.1.36</DIV></DIV><!-- EndContentMarker --></TD>
+    <TD class=column2 vAlign=top width=160>
+      <DIV id=search><!-- google_ad_section_start(weight=ignore) -->
+      <H2>Search<SPAN class=w00t>w00t</SPAN></H2><!-- Google CSE Search Box Begins -->
+      <FORM id=searchbox_000872085005376217422:zamd_7elal4 style="MARGIN: 0px" 
+      action=http://www.dreamincode.net/home><INPUT type=hidden 
+      value=000872085005376217422:zamd_7elal4 name=cx> <INPUT type=hidden 
+      value=google name=p> <INPUT type=hidden value=FORID:11 name=cof> <INPUT 
+      size=11 name=q> <INPUT type=submit value=Go name=sa> </FORM><!-- Google CSE Search Box Ends --></DIV>
+      <DIV class=tutorials><BR><A 
+      href="http://www.dreamincode.net/rss/featured.php" 
+      type=application/rss+xml rel=alternate><IMG 
+      style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; FLOAT: left; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px; MARGIN-RIGHT: 5px; BORDER-BOTTOM: 0px" 
+      alt="" 
+      src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/feed-icon32x32.png" 
+      align=left></A>
+      <SCRIPT type=text/javascript>
+
+	document.write('<a rel="nofollow" href="http://del.icio.us/post?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Bookmark This to del.icio.us"><img src="/home/images/80727937.png" alt="delicious" height="16" width="16" /></a>');
+
+	document.write('<a rel="nofollow" href="http://digg.com/submit?phase=2&url='+encodeURIComponent(location.href)+'" title="Digg This!"><img src="/home/images/89072042.png" alt="digg" height="16" width="16" /></a>');
+
+	document.write('<a rel="nofollow" href="http://www.furl.net/storeIt.jsp?u='+encodeURIComponent(location.href)+'&t='+encodeURIComponent(document.title)+'" title="Bookmark To Furl"><img src="/home/images/47600014.png" alt="furl" height="16" width="16" /></a>');
+
+	document.write('<a rel="nofollow" href="http://www.google.com/bookmarks/mark?op=add&bkmk='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Bookmark to Google"><img src="/home/images/10847106.png" alt="google" height="16" width="16" /></a>');
+
+	document.write('<a rel="nofollow"  href="http://www.newsvine.com/_tools/seed&save?u='+encodeURIComponent(location.href)+'&h='+encodeURIComponent(document.title)+'" title="Bookmark to Newsvine" ><img src="/home/images/27563199.png" alt="newsvine" height="16" width="16" /></a><br>');
+
+	document.write('<a rel="nofollow" href="http://reddit.com/submit? url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Add to reddit"><img src="/home/images/10796749.png" alt="reddit" height="16" width="16" /></a>');
+
+	document.write('<a rel="nofollow" href="http://scuttle.org/bookmarks.php/pass?action=add&address='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Bookmark to Scuttle"><img src="/home/images/82780522.png" alt="scuttle" height="16" width="16" /></a>');
+
+	document.write('<a rel="nofollow" href="http://www.spurl.net/spurl.php?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)+'" title="Spurl This!"><img src="/home/images/67105361.png" alt="spurl" height="16" width="16" /></a>');
+
+	document.write('<a rel="nofollow" href="http://www.squidoo.com/lensmaster/bookmark?'+encodeURIComponent(location.href)+'"><img src="/home/images/25436023.png" alt="Squidoo" height="16" width="16" /></a>');
+
+	document.write('<a rel="nofollow" href="http://technorati.com/faves?add='+encodeURIComponent(location.href)+'" title="Add to Technorati Favorites" ><img src="/home/images/81723336.png" alt="Technorati" height="16" width="16" /></a>');
+
+	</SCRIPT>
+       
+      <H2>Get Live Help!</H2><A 
+      href="http://www.kasamba.com/Advice/Browse/ViewCategory.aspx?CatID=70&amp;DesID=4&amp;SortBy=9&amp;img=17&amp;kbid=3005" 
+      rel=nofollow height="163" width="160"><IMG 
+      src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/kasamba.gif"><IMG 
+      src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/1pxlclr.gif"> 
+      </A><!-- google_ad_section_end --><!-- google_ad_section_start(weight=ignore) -->
+      <H2><A 
+      href="http://www.dreamincode.net/forums/showforum78.htm">Tutorials</A></H2>
+      <H3>Programming</H3>
+      <UL>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/forums/showforum47.htm">PHP 
+        Tutorials</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/forums/showforum48.htm">C++ 
+        Tutorials</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/forums/showforum49.htm">ColdFusion 
+        Tutorials</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/forums/showforum50.htm">Java 
+        Tutorials</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/forums/showforum51.htm">VisualBasic 
+        Tutorials</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/forums/showforum85.htm">C# 
+        Tutorials</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/forums/showforum87.htm">Database 
+        Tutorials</A> </LI></UL>
+      <H3>Web Development</H3>
+      <UL>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/forums/showforum56.htm">HTML 
+        Tutorials</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/forums/showforum56.htm">JavaScript 
+        Tutorials</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/forums/showforum57.htm">CSS 
+        Tutorials</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/forums/showforum58.htm">Flash 
+        Tutorials</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/forums/showforum58.htm">Photoshop 
+        Tutorials</A> </LI></UL><!-- google_ad_section_end --><!-- google_ad_section_start(weight=ignore) -->
+      <H2>Reference Sheets</H2><A 
+      href="http://www.dreamincode.net/forums/showtopic17947.htm"><IMG 
+      height=151 
+      src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/ref_sheets_small_animated.gif" 
+      width=157></A> <!-- google_ad_section_end --><!-- google_ad_section_start(weight=ignore) -->
+      <H2><A href="http://www.dreamincode.net/code">Code Snippets</A></H2>
+      <UL>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/code/browse.php?cid=2">C++ Source 
+        Code</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/code/browse.php?cid=6">Java Source 
+        Code</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/code/browse.php?cid=17">C Source 
+        Code</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/code/browse.php?cid=4">Visual Basic 
+        Source Code</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/code/browse.php?cid=1">PHP Source 
+        Code</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/code/browse.php?cid=8">ActionScript 
+        Source Code</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/code/browse.php?cid=9">JavaScript 
+        Source Code</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/code/browse.php?cid=18">VB.NET Source 
+        Code</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/code/browse.php?cid=7">CGI/Perl Source 
+        Code</A> </LI>
+        <LI><A class=menu 
+        href="http://www.dreamincode.net/code/browse.php?cid=11">HTML/CSS Source 
+        Code</A> </LI></UL><!-- google_ad_section_end -->
+      <H2>Go Premium</H2><A 
+      href="http://www.dreamincode.net/forums/index.php?act=paysubs&amp;CODE=index" 
+      rel=nofollow><IMG 
+      src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/dicpp.gif"> 
+      </A><!-- google_ad_section_start(weight=ignore) -->
+      <H2>Free <ABBR title=Dream.in.Code>DIC</ABBR> T-Shirt</H2><A 
+      href="http://www.dreamincode.net/forums/index.php?act=announce&amp;f=1&amp;id=6" 
+      rel=nofollow><IMG height=149 alt="T-Shirt Example" 
+      src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/tshirt.gif" 
+      width=160></A> 
+      <H2>Related Sites</H2>
+      <UL>
+        <LI><A class=menu href="http://www.talkfreelance.com/" 
+        rel=nofollow>Freelance design forums</A> </LI>
+        <LI><A class=menu href="http://www.daydreamgraphics.com/" 
+        rel=nofollow>DayDream Graphics</A> </LI>
+        <LI><A class=menu title=Scripts href="http://www.computerscripts.com/" 
+        rel=nofollow>Scripts</A> </LI>
+        <LI><A class=menu title=HostingDiscussion.com 
+        href="http://www.hostingdiscussion.com/" 
+        rel=nofollow>HostingDiscussion.com</A> </LI>
+        <LI><A class=menu title="Photoshop Forums" 
+        href="http://www.photoshopforums.com/" rel=nofollow>Photoshop Forums</A> 
+        </LI>
+        <LI><A class=menu title="Webmaster Forums" 
+        href="http://www.developercube.com/" rel=nofollow>Webmaster Forums</A> 
+        </LI>
+        <LI><A class=menu title="TProgramming Books" 
+        href="http://www.webdevbooks.com/" rel=nofollow>Programming Books</A> 
+        </LI>
+        <LI><A class=menu title="Build Communities" 
+        href="http://www.communityadmins.com/" rel=nofollow>Build 
+        Communities</A> </LI>
+        <LI><A class=menu title="Promote Forums" 
+        href="http://www.communitypromotion.com/" rel=nofollow>Promote 
+        Forums</A> </LI></UL>
+      <H2>Monthly Drawing</H2><A 
+      href="http://www.dreamincode.net/forums/index.php?showtopic=19383" 
+      rel=nofollow><IMG height=77 alt="Thumb Drive" 
+      src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/monthlygiveaway.gif" 
+      width=130></A> 
+      <H2>Partners</H2>
+      <UL>
+        <LI><A title="Outsourcing and Offshore software development in India" 
+        href="http://www.dotnetspider.com/" rel=nofollow>Dotnet Spider</A> </LI>
+        <LI><A title="Microsoft BizTalk, SOA, XML" href="http://www.topxml.com/" 
+        rel=nofollow>BizTalk Adaptors</A> </LI>
+        <LI><A title="The largest public source code database on the Internet" 
+        href="http://www.planet-source-code.com/" rel=nofollow>Planet Source 
+        Code</A> </LI>
+        <LI><A title="The #1 ASP.NET Community" href="http://aspalliance.com/" 
+        rel=nofollow>ASPAlliance</A> </LI></UL><!-- google_ad_section_end -->
+      <H2>Top Contributors</H2><!-- google_ad_section_start(weight=ignore) --><!-- <style type="text/css">
+#top10 img { width: 25px; height: 25px;}
+</style>
+ -->
+      <UL>
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=40184" 
+        rel=nofollow><B><SPAN style="COLOR: #00cccc">PsychoCoder</SPAN></B></A> 
+        (2000) </LI>
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=12231" 
+        rel=nofollow><B><SPAN style="COLOR: #cc6633">Xing</SPAN></B></A> (1575) 
+        </LI>
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=18225" 
+        rel=nofollow><B><SPAN style="COLOR: #999933">m2s87</SPAN></B></A> (1225) 
+        </LI>
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=32303" 
+        rel=nofollow><B><SPAN style="COLOR: #999933">no2pencil</SPAN></B></A> 
+        (1200) </LI>
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=4811" 
+        rel=nofollow><B><SPAN style="COLOR: #999933">WolfCoder</SPAN></B></A> 
+        (1075) </LI>
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=4205" 
+        rel=nofollow><B><SPAN style="COLOR: #993399">reyco1</SPAN></B></A> 
+        (1075) </LI>
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=10963" 
+        rel=nofollow><B><SPAN style="COLOR: #999933">alpha02</SPAN></B></A> 
+        (800) </LI>
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=12634" 
+        rel=nofollow><B><SPAN style="COLOR: #cc6633">Louisda16th</SPAN></B></A> 
+        (755) </LI>
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=9890" 
+        rel=nofollow><B><SPAN style="COLOR: #cc6633">cipherence</SPAN></B></A> 
+        (650) </LI>
+        <LI><A href="http://www.dreamincode.net/forums/index.php?showuser=17499" 
+        rel=nofollow><B><SPAN style="COLOR: #cc6633">eXceed69</SPAN></B></A> 
+        (650) </LI></UL><!-- google_ad_section_end --></DIV></TD></TR></TBODY></TABLE><!-- AdSense Tracker --><!-- 	<script 
+    src="/home/astracker.js" 
+    type="text/javascript" 
+    charset="utf-8">
+	</script> --><!-- Kontera -->
+<SCRIPT type=text/javascript>
+	var dc_UnitID = 14;
+	var dc_PublisherID = 8210;
+	var dc_AdLinkColor = '#FF6600';
+	var dc_adprod='ADL';
+	var dc_maxLinks='6';
+	</SCRIPT>
+
+<SCRIPT 
+src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/KonaLibInline.js" 
+type=text/javascript></SCRIPT>
+<!-- start Vibrant Media IntelliTXT script section
+	<script type="text/javascript" src="http://dreamincode.us.intellitxt.com/intellitxt/front.asp?ipid=5877"></script>
+	 -->
+<SCRIPT 
+src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/se_hilite.js" 
+type=text/javascript></SCRIPT>
+<!-- Crazy Egg 
+	<script type="text/javascript" src="http://crazyegg.com/pages/scripts/0003/0872.js"> </script>--><!-- Google Analytics -->
+<SCRIPT 
+src="Big Integer Using Array to Subtraction - C++ - Code Snippets  DreamInCode_net_files/urchin.js" 
+type=text/javascript>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+_uacct = "UA-69851-1";
+_udn="dreamincode.net"; 
+urchinTracker();
+</SCRIPT>
+</BODY></HTML>
