@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Test and Model Evaluation in JavaScript</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0/dist/tf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+  <h1>Data Test and Model Evaluation</h1>
+  <input type="file" id="dataFileInput" accept=".xlsx" />
+
+  
+
+  <button onclick="runTestData(0)">Run Test Data</button>
+  <pre id="output"></pre>
+
+  <script>
+    const n_input = 14;
+    const n_output = 44;
+    const modelPath = 'model_reg/model_reptile_Comb-KMT-Tiny-Reg.json';
+    let dataFile;
+    let model;
+
+    // Declare variables for input Excel file path and sheet name
+    const input_file_path_excel = "dataset/dataset_v4.xlsx";
+    const sheet_name = 'CombinedSheet';
+
+    document.getElementById('dataFileInput').addEventListener('change', handleFileUpload);
+
+    async function handleFileUpload(event) {
+      const file = event.target.files[0];
+      const data = await file.arrayBuffer();
+      dataFile = XLSX.read(data, { type: 'array' });
+      console.log("Excel file loaded successfully!");
+    }
+
+    async function loadModelFromJSON(path) {
+      const response = await fetch(path);
+      const modelJSON = await response.json();
+      model = await tf.loadLayersModel(tf.io.fromMemory(modelJSON.modelTopology, modelJSON.weightSpecs, modelJSON.weightData));
+      console.log("Model loaded successfully!");
+    }
+
+    function getDataTest(id_test_data) {
+      const sheet = dataFile.Sheets[sheet_name];
+      const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+      return jsonData[id_test_data].slice(0, n_input);
+    }
+
+    function getYGT(id_test_data) {
+      const sheet = dataFile.Sheets[sheet_name];
+      const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+      return jsonData[id_test_data].slice(-n_output);
+    }
+
+    async function testSingleDataReturnLoss(model, X_tensor, y_true) {
+      const inputTensor = tf.tensor2d([X_tensor]);
+      const yTrueTensor = tf.tensor2d([y_true]);
+
+      const predictions = model.predict(inputTensor);
+      const mse = tf.losses.meanSquaredError(yTrueTensor, predictions).dataSync()[0];
+
+      inputTensor.dispose();
+      yTrueTensor.dispose();
+      predictions.dispose();
+
+      return mse;
+    }
+
+    async function testSingleDataReturnPred(model, singleDataTest) {
+      const inputTensor = tf.tensor2d([singleDataTest]);
+      const prediction = model.predict(inputTensor);
+      const predictedValues = prediction.dataSync();
+
+      inputTensor.dispose();
+      prediction.dispose();
+
+      return Array.from(predictedValues);
+    }
+
+    function getTopKValuesAndIndices(predictions, topk) {
+      const predictionTensor = tf.tensor1d(predictions);
+      const { values, indices } = tf.topk(predictionTensor, topk);
+
+      const topValues = values.arraySync();
+      const topIndices = indices.arraySync();
+
+      predictionTensor.dispose();
+      values.dispose();
+      indices.dispose();
+
+      return { topValues, topIndices };
+    }
+
+    function getTopKColumns(predictions, topk) {
+      const sheet = dataFile.Sheets[sheet_name];
+      const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+      
+      const outputColumnNames = jsonData[0].slice(-n_output);
+
+      const { topValues, topIndices } = getTopKValuesAndIndices(predictions, topk);
+      const topColumnNames = topIndices.map(index => outputColumnNames[index]);
+
+      return { topValues, topIndices, topColumnNames };
+    }
+
+    async function runTestData(id_test_data) {
+      await loadModelFromJSON(modelPath);
+
+      const testData = getDataTest(id_test_data);
+      const yTrueTestData = getYGT(id_test_data);
+
+      document.getElementById('output').innerText = `Data Uji: ${JSON.stringify(testData)}
+      Panjang fitur input = ${testData.length}\n`;
+
+      const hasilPred = await testSingleDataReturnPred(model, testData);
+      document.getElementById('output').innerText += `Hasil Regresi: ${JSON.stringify(hasilPred)}
+      Panjang dim Hasil Regresi: ${hasilPred.length}\n\n`;
+
+      const topk = 2;
+      const { topValues, topIndices, topColumnNames } = getTopKColumns(hasilPred, topk);
+      document.getElementById('output').innerText += `Top Values: ${JSON.stringify(topValues)}
+      Top Indices: ${JSON.stringify(topIndices)}
+      Top Column Names: ${JSON.stringify(topColumnNames)}\n\n`;
+
+      const nilaiLoss = await testSingleDataReturnLoss(model, testData, yTrueTestData);
+      document.getElementById('output').innerText += `Hasil nilai loss: ${nilaiLoss}\n`;
+    }
+  </script>
+</body>
+</html>

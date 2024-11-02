@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anatomy Body Human with MAP Calculator</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+      margin: 40px auto;
+      width: 90%;
+    }
+
+    .human-body {
+      width: 207px;
+      position: relative;
+      height: 260px;
+    }
+
+    .human-body svg:hover {
+      cursor: pointer;
+    }
+
+    .human-body svg path:hover {
+      fill: #a80000;
+    }
+
+    .human-body svg {
+      position: absolute;
+      left: 50%;
+      fill: #000;
+    }
+
+    #area #data {
+      color: black;
+    }
+
+    .calculator {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 300px;
+      font-family: Arial, sans-serif;
+    }
+
+    .calculator input {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      box-sizing: border-box;
+    }
+
+    .calculator button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .calculator button:hover {
+      background-color: #45a049;
+    }
+
+    .result {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app" class="container">
+    <!-- Anatomy Body SVG -->
+    <div class="human-body">
+      <svg @click="part_clicked" xmlns="http://www.w3.org/2000/svg"
+           width="259.22897"
+           height="350"
+           viewBox="0 0 68.587668 92.604164">
+        <!-- Head -->
+        <path id="head" style="opacity:1" d="m 11.671635,6.3585449 -0.0482,-2.59085 4.20648,-2.46806 4.42769,2.95361 -0.0405,1.94408 0.24197,-3.34467 -2.03129,-2.31103004 -2.84508,-0.51629 -2.20423,0.52915 -1.9363,2.63077004 z" />
+        <!-- Face -->
+        <path id="face" style="opacity:1" d="m 19.748825,6.7034949 0.0203,-2.20747 -3.96689,-2.7637 -3.74099,2.23559 -0.006,2.63528 -0.60741,0.0403 0.27408,1.82447 0.97635,0.33932 0.44244,2.1802901 1.82222,2.06556 2.03518,-0.0607 1.79223,-1.94408 0.35957,-2.2406601 0.97616,-0.33932 0.25159,-1.78416 z" />
+        <!-- Neck -->
+        <path id="neck" style="opacity:1" d="m 13.304665,11.910505 1.64975,2.35202 0.74426,2.62159 -1.73486,-1.38354 -0.86649,-2.97104 z m 5.08047,0 -1.64975,2.35202 -0.74538,2.62234 1.73486,-1.38354 0.86649,-2.97104 z" />
+        <!-- Shoulders -->
+        <path id="shoulder-left" style="opacity:1" d="m 19.047795,13.248365 3.55748,1.97916 0.72653,-0.35074 z m -0.107,0.43288 -0.37119,1.73073 2.1846,0.53561 1.40116,-0.49436 z" />
+        <path id="shoulder-right" style="opacity:1" d="m 12.624785,13.248365 -3.5574599,1.97916 -0.72653,-0.35074 z m 0.107,0.43288 0.37119,1.73073 -2.18459,0.53561 -1.4011499,-0.49436 z" />
+        <!-- Arms -->
+        <path id="arm-left" style="opacity:1" d="m 27.621665,30.814715 -0.33838,1.70499 -1.81932,-2.54418 -0.6629,-1.26895 z m -2.85271,-2.6096 c -0.0259,-0.0144 -0.0536,-0.0254 -0.0824,-0.0324 l -1.48333,-4.95503 1.00456,-2.08428 1.65511,1.74532 2.23034,6.67667 0.0415,0.93739 c -1.06528,-0.84215 -2.18962,-1.60679 -3.36434,-2.28803 z" />
+        <path id="arm-right" style="opacity:1" d="m 4.0746451,30.814715 0.33838,1.70499 1.81931,-2.54418 0.66289,-1.26895 z m 2.8527,-2.6096 c 0.0259,-0.0144 0.0536,-0.0254 0.0824,-0.0324 l 1.48332,-4.95503 -1.00455,-2.08428 -1.65509,1.74532 -2.23034,6.67667 -0.0415,0.93739 c 1.06528,-0.84215 2.18961,-1.60679 3.36433,-2.28803 z" />
+        <!-- More body parts continue here... -->
+      </svg>
+      <div id="area">
+        <p id="data">Clicked Part ID: {{ data_clicked_id }}</p>
+      </div>
+    </div>
+
+    <!-- MAP Calculator -->
+    <div class="calculator">
+      <h3>MAP Calculator</h3>
+      <label for="systolic">Systolic Pressure:</label>
+      <input type="number" v-model="systolic" placeholder="Enter Systolic Pressure">
+
+      <label for="diastolic">Diastolic Pressure:</label>
+      <input type="number" v-model="diastolic" placeholder="Enter Diastolic Pressure">
+
+      <button @click="calculateMAP">Calculate MAP</button>
+
+      <div v-if="map !== null" class="result">
+        Mean Arterial Pressure (MAP): {{ map }}
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: () => ({
+        data_clicked_id: "",
+        systolic: null,
+        diastolic: null,
+        map: null
+      }),
+      methods: {
+        part_clicked(val) {
+          this.data_clicked_id = val.target.getAttribute('id');
+        },
+        calculateMAP() {
+          if (this.systolic && this.diastolic) {
+            this.map = ((parseInt(this.systolic) + (2 * parseInt(this.diastolic))) / 3).toFixed(2);
+          } else {
+            alert('Please enter both systolic and diastolic pressures');
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

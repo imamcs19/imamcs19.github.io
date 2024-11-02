@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neural Network Training and Loading with JavaScript</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0/dist/tf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+  <h1>Neural Network Training and Loading with JavaScript</h1>
+  <input type="file" id="dataFileInput" accept=".xlsx" />
+  <button onclick="trainModel()">Train Model</button>
+  <button onclick="loadModelFromPath()">Load Model from Path</button>
+  <pre id="output"></pre>
+
+  <script>
+    let model;
+    let inputData = [];
+    let outputData = [];
+    
+    // Set the JSON path for the model
+    const path_json = "model_reg/model_reptile_Comb-KMT-Tiny-Reg.json";
+
+    document.getElementById('dataFileInput').addEventListener('change', handleFileUpload);
+
+    async function handleFileUpload(event) {
+      const file = event.target.files[0];
+      const data = await file.arrayBuffer();
+      const workbook = XLSX.read(data, { type: 'array' });
+
+      const sheet = workbook.Sheets[workbook.SheetNames[0]];
+      const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+      jsonData.slice(1).forEach(row => {
+        inputData.push(row.slice(0, 14));  
+        outputData.push(row.slice(14));    
+      });
+
+      console.log("Data loaded successfully!");
+    }
+
+    async function buildModel() {
+      model = tf.sequential();
+
+      model.add(tf.layers.dense({ units: 100, inputShape: [14], activation: 'tanh' }));
+      model.add(tf.layers.dense({ units: 50, activation: 'tanh' }));
+      model.add(tf.layers.dense({ units: 25, activation: 'tanh' }));
+
+      model.add(tf.layers.dense({ units: 44 }));
+
+      model.compile({ optimizer: tf.train.adam(0.01), loss: 'meanSquaredError' });
+
+      console.log("Model built and compiled!");
+    }
+
+    async function trainModel() {
+      if (!model) await buildModel();
+
+      const xs = tf.tensor2d(inputData);
+      const ys = tf.tensor2d(outputData);
+
+      const epochs = 100;
+      let lossValues = [];
+
+      await model.fit(xs, ys, {
+        epochs: epochs,
+        callbacks: {
+          onEpochEnd: (epoch, logs) => {
+            lossValues.push(logs.loss);
+            console.log(`Epoch ${epoch + 1}: Loss = ${logs.loss}`);
+          }
+        }
+      });
+
+      document.getElementById('output').innerText = "Loss per Epoch:\n" + lossValues.join('\n');
+    }
+
+    async function loadModelFromPath() {
+      fetch(path_json)
+        .then(response => response.json())
+        .then(modelJSON => {
+          loadModelFromJSON(modelJSON);
+        })
+        .catch(error => console.error("Error loading JSON model:", error));
+    }
+
+    async function loadModelFromJSON(modelJSON) {
+      const { architecture, weights } = modelJSON;
+      model = tf.sequential();
+
+      model.add(tf.layers.dense({ units: architecture.n_hidden1, inputShape: [architecture.n_input], activation: 'tanh' }));
+      model.add(tf.layers.dense({ units: architecture.n_hidden2, activation: 'tanh' }));
+      model.add(tf.layers.dense({ units: architecture.n_hidden3, activation: 'tanh' }));
+      model.add(tf.layers.dense({ units: architecture.n_output }));
+
+      model.setWeights(weights.map(w => tf.tensor(w.data, w.shape)));
+
+      model.compile({ optimizer: tf.train.adam(0.01), loss: 'meanSquaredError' });
+
+      console.log("Model loaded and compiled from JSON!");
+    }
+  </script>
+</body>
+</html>

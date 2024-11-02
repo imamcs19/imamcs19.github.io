@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Test and Model Evaluation in JavaScript</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0/dist/tf.min.js"></script>
+</head>
+<body>
+  <h1>Data Test (Select Symptoms) and Model Evaluation</h1>
+
+  <!-- Symptom Checklist -->
+  <div>
+    <label><input type="checkbox" id="checkbox1" onclick="updateDataTest()"> Migraine</label>
+    <div style="margin-left: 20px;">
+      <label><input type="checkbox" id="checkbox1_1" onclick="updateDataTest()"> Sakit kepala berdenyut di satu sisi</label>
+    </div>
+
+    <label><input type="checkbox" id="checkbox2" onclick="updateDataTest()"> Vertigo</label>
+    <div style="margin-left: 20px;">
+      <label><input type="checkbox" id="checkbox2_1" onclick="updateDataTest()"> Pusing berputar</label>
+      <label><input type="checkbox" id="checkbox2_2" onclick="updateDataTest()"> Kehilangan keseimbangan</label>
+    </div>
+
+    <label><input type="checkbox" id="checkbox3" onclick="updateDataTest()"> Sariawan (di mulut/lidah)</label>
+    <div style="margin-left: 20px;">
+      <label><input type="checkbox" id="checkbox3_1" onclick="updateDataTest()"> Luka kecil pada mulut/lidah</label>
+      <label><input type="checkbox" id="checkbox3_2" onclick="updateDataTest()"> Nyeri di sekitar mulut/lidah/pipi/kepala</label>
+    </div>
+
+    <label><input type="checkbox" id="checkbox4" onclick="updateDataTest()"> Sakit Gigi</label>
+    <div style="margin-left: 20px;">
+      <label><input type="checkbox" id="checkbox4_1" onclick="updateDataTest()"> Nyeri di gigi atau gusi</label>
+    </div>
+
+    <label><input type="checkbox" id="checkbox5" onclick="updateDataTest()"> Radang Tenggorokan</label>
+    <div style="margin-left: 20px;">
+      <label><input type="checkbox" id="checkbox5_1" onclick="updateDataTest()"> Nyeri tenggorokan</label>
+      <label><input type="checkbox" id="checkbox5_2" onclick="updateDataTest()"> Batuk</label>
+      <label><input type="checkbox" id="checkbox5_3" onclick="updateDataTest()"> Suara serak</label>
+    </div>
+  </div>
+
+  <pre id="input_data_test"></pre>
+
+  <script>
+    const n_input = 14;
+    let data_test = new Array(n_input).fill(0);
+
+    function updateDataTest() {
+      data_test[0] = document.getElementById('checkbox1').checked ? 1 : 0;
+      data_test[1] = document.getElementById('checkbox1_1').checked ? 1 : 0;
+      data_test[2] = document.getElementById('checkbox2').checked ? 1 : 0;
+      data_test[3] = document.getElementById('checkbox2_1').checked ? 1 : 0;
+      data_test[4] = document.getElementById('checkbox2_2').checked ? 1 : 0;
+      data_test[5] = document.getElementById('checkbox3').checked ? 1 : 0;
+      data_test[6] = document.getElementById('checkbox3_1').checked ? 1 : 0;
+      data_test[7] = document.getElementById('checkbox3_2').checked ? 1 : 0;
+      data_test[8] = document.getElementById('checkbox4').checked ? 1 : 0;
+      data_test[9] = document.getElementById('checkbox4_1').checked ? 1 : 0;
+      data_test[10] = document.getElementById('checkbox5').checked ? 1 : 0;
+      data_test[11] = document.getElementById('checkbox5_1').checked ? 1 : 0;
+      data_test[12] = document.getElementById('checkbox5_2').checked ? 1 : 0;
+      data_test[13] = document.getElementById('checkbox5_3').checked ? 1 : 0;
+
+      document.getElementById('input_data_test').innerText = `data_test: ${JSON.stringify(data_test)}`;
+    }
+  </script>
+
+  <button onclick="runTestData(data_test)">Run Test Data</button>
+  <pre id="output"></pre>
+
+  <script>
+    const n_output = 44;
+    const modelPath = 'model_reg/model_reptile_Comb-KMT-Tiny-Reg.json';
+    let model;
+    const input_dataset_file_json = "dataset/dataset_v4.json";
+    let dataFile;
+
+    async function loadDatasetFromJSON() {
+      try {
+        const response = await fetch(input_dataset_file_json);
+        const jsonData = await response.json();
+        dataFile = jsonData["CombinedSheet"];
+        console.log("Dataset loaded successfully from JSON file!");
+      } catch (error) {
+        console.error("Error loading JSON dataset:", error);
+      }
+    }
+
+    async function loadModelFromJSON(path) {
+      const response = await fetch(path);
+      const modelJSON = await response.json();
+      model = await tf.loadLayersModel(tf.io.fromMemory(modelJSON.modelTopology, modelJSON.weightSpecs, modelJSON.weightData));
+      console.log("Model loaded successfully!");
+    }
+
+    function getTopKValuesAndIndices(predictions, topk) {
+      const predictionTensor = tf.tensor1d(predictions);
+      const { values, indices } = tf.topk(predictionTensor, topk);
+
+      const topValues = values.arraySync();
+      const topIndices = indices.arraySync();
+
+      predictionTensor.dispose();
+      values.dispose();
+      indices.dispose();
+
+      return { topValues, topIndices };
+    }
+
+    function getTopKColumns(predictions, topk) {
+      const outputColumnNames = dataFile[0].slice(-n_output);
+      const { topValues, topIndices } = getTopKValuesAndIndices(predictions, topk);
+      const topColumnNames = topIndices.map(index => outputColumnNames[index]);
+
+      return { topValues, topIndices, topColumnNames };
+    }
+
+    async function runTestData(data_test) {
+      await loadModelFromJSON(modelPath);
+      document.getElementById('output').innerText = `Data Uji: ${JSON.stringify(data_test)}
+      Panjang fitur input = ${data_test.length}\n`;
+
+      const hasilPred = await testSingleDataReturnPred(model, data_test);
+      document.getElementById('output').innerText += `Hasil Regresi: ${JSON.stringify(hasilPred)}
+      Panjang dim Hasil Regresi: ${hasilPred.length}\n\n`;
+
+      const topk = 2;
+      const { topValues, topIndices, topColumnNames } = getTopKColumns(hasilPred, topk);
+      document.getElementById('output').innerText += `Top Values: ${JSON.stringify(topValues)}
+      Top Indices: ${JSON.stringify(topIndices)}
+      Top Column Names: ${JSON.stringify(topColumnNames)}\n\n`;
+    }
+
+    async function testSingleDataReturnPred(model, singleDataTest) {
+      const inputTensor = tf.tensor2d([singleDataTest]);
+      const prediction = model.predict(inputTensor);
+      const predictedValues = prediction.dataSync();
+
+      inputTensor.dispose();
+      prediction.dispose();
+
+      return Array.from(predictedValues);
+    }
+  </script>
+</body>
+</html>

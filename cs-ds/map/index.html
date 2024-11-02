@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAP Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+        }
+        input {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Mean Arterial Pressure (MAP) Calculator</h1>
+
+        <label for="systolic">Systolic Blood Pressure (SBP):</label>
+        <input type="number" id="systolic" placeholder="Enter systolic BP">
+
+        <label for="diastolic">Diastolic Blood Pressure (DBP):</label>
+        <input type="number" id="diastolic" placeholder="Enter diastolic BP">
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // Event listeners untuk input SBP dan DBP
+        document.getElementById('systolic').addEventListener('input', calculateMAP);
+        document.getElementById('diastolic').addEventListener('input', calculateMAP);
+
+        function calculateMAP() {
+            var systolic = document.getElementById("systolic").value;
+            var diastolic = document.getElementById("diastolic").value;
+
+            // Hanya hitung jika kedua input tidak kosong
+            if (systolic && diastolic) {
+                var map = (parseFloat(systolic) + 2 * parseFloat(diastolic)) / 3;
+                document.getElementById("result").innerHTML = "Mean Arterial Pressure (MAP): " + map.toFixed(2) + " mmHg";
+            } else {
+                document.getElementById("result").innerHTML = "";  // Kosongkan hasil jika ada input yang hilang
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Test and Model Evaluation in JavaScript</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0/dist/tf.min.js"></script>
+</head>
+<body>
+  <h1>Data Test (Select Symptoms) and Model Evaluation</h1>
+
+  <!-- Main Checklist -->
+  <div>
+    <label>
+      <input type="checkbox" id="checkbox1" onclick="updateDataTest()"> Migraine
+    </label>
+    <div style="margin-left: 20px;">
+      <label>
+        <input type="checkbox" id="checkbox1_1" onclick="updateDataTest()"> Sakit kepala berdenyut di satu sisi
+      </label>
+    </div>
+
+    <label>
+      <input type="checkbox" id="checkbox2" onclick="updateDataTest()"> Vertigo
+    </label>
+    <div style="margin-left: 20px;">
+      <label>
+        <input type="checkbox" id="checkbox2_1" onclick="updateDataTest()"> Pusing berputar
+      </label>
+      <label>
+        <input type="checkbox" id="checkbox2_2" onclick="updateDataTest()"> Kehilangan keseimbangan
+      </label>
+    </div>
+
+    <label>
+      <input type="checkbox" id="checkbox3" onclick="updateDataTest()"> Sariawan (di mulut/lidah)
+    </label>
+    <div style="margin-left: 20px;">
+      <label>
+        <input type="checkbox" id="checkbox3_1" onclick="updateDataTest()"> Luka kecil pada mulut/lidah
+      </label>
+      <label>
+        <input type="checkbox" id="checkbox3_2" onclick="updateDataTest()"> Nyeri di sekitar mulut/lidah/pipi/kepala
+      </label>
+    </div>
+
+    <label>
+      <input type="checkbox" id="checkbox4" onclick="updateDataTest()"> Sakit Gigi
+    </label>
+    <div style="margin-left: 20px;">
+      <label>
+        <input type="checkbox" id="checkbox4_1" onclick="updateDataTest()"> Nyeri di gigi atau gusi
+      </label>
+    </div>
+
+    <label>
+      <input type="checkbox" id="checkbox5" onclick="updateDataTest()"> Radang Tenggorokan
+    </label>
+    <div style="margin-left: 20px;">
+      <label>
+        <input type="checkbox" id="checkbox5_1" onclick="updateDataTest()"> Nyeri tenggorokan
+      </label>
+      <label>
+        <input type="checkbox" id="checkbox5_2" onclick="updateDataTest()"> Batuk
+      </label>
+      <label>
+        <input type="checkbox" id="checkbox5_3" onclick="updateDataTest()"> Suara serak
+      </label>
+    </div>
+  </div>
+
+  <pre id="input_data_test"></pre>
+
+  <script>
+    // Initialize data_test array based on the number of checkboxes (5 main + 9 sub = 14)
+    const n_input = 14;
+    let data_test = new Array(n_input).fill(0);
+
+    function updateDataTest() {
+      // Update data_test based on the state of each checkbox
+      data_test[0] = document.getElementById('checkbox1').checked ? 1 : 0;
+      data_test[1] = document.getElementById('checkbox1_1').checked ? 1 : 0;
+
+      data_test[2] = document.getElementById('checkbox2').checked ? 1 : 0;
+      data_test[3] = document.getElementById('checkbox2_1').checked ? 1 : 0;
+      data_test[4] = document.getElementById('checkbox2_2').checked ? 1 : 0;
+
+      data_test[5] = document.getElementById('checkbox3').checked ? 1 : 0;
+      data_test[6] = document.getElementById('checkbox3_1').checked ? 1 : 0;
+      data_test[7] = document.getElementById('checkbox3_2').checked ? 1 : 0;
+
+      data_test[8] = document.getElementById('checkbox4').checked ? 1 : 0;
+      data_test[9] = document.getElementById('checkbox4_1').checked ? 1 : 0;
+
+      data_test[10] = document.getElementById('checkbox5').checked ? 1 : 0;
+      data_test[11] = document.getElementById('checkbox5_1').checked ? 1 : 0;
+      data_test[12] = document.getElementById('checkbox5_2').checked ? 1 : 0;
+      data_test[13] = document.getElementById('checkbox5_3').checked ? 1 : 0;
+
+      // Display data_test values
+      document.getElementById('input_data_test').innerText = `data_test: ${JSON.stringify(data_test)}`;
+    }
+  </script>
+
+  <button onclick="runTestData(0)">Run Test Data</button>
+  <pre id="output"></pre>
+
+  <script>
+    const n_input = 14;
+    const n_output = 44;
+    const modelPath = 'model_reg/model_reptile_Comb-KMT-Tiny-Reg.json';
+    let model;
+
+    // Declare variables for input Json file path and sheet name
+    //const input_file_path_excel = "dataset/dataset_v4.xlsx";
+    //const sheet_name = 'CombinedSheet';
+
+    const input_dataset_file_json = "dataset/dataset_v4.json";
+    let dataFile;
+
+
+    //document.getElementById('dataFileInput').addEventListener('change', handleFileUpload);
+
+    /*async function handleFileUpload(event) {
+      const file = event.target.files[0];
+      const data = await file.arrayBuffer();
+      dataFile = XLSX.read(data, { type: 'array' });
+      console.log("Excel file loaded successfully!");
+    }*/
+
+    // Function to load dataset JSON directly
+    async function loadDatasetFromJSON() {
+      try {
+        const response = await fetch(input_dataset_file_json);
+        const jsonData = await response.json();
+        dataFile = jsonData["CombinedSheet"];
+        console.log("Dataset loaded successfully from JSON file!");
+      } catch (error) {
+        console.error("Error loading JSON dataset:", error);
+      }
+    }
+
+    async function loadModelFromJSON(path) {
+      const response = await fetch(path);
+      const modelJSON = await response.json();
+      model = await tf.loadLayersModel(tf.io.fromMemory(modelJSON.modelTopology, modelJSON.weightSpecs, modelJSON.weightData));
+      console.log("Model loaded successfully!");
+    }
+
+    function getDataTest(id_test_data) {
+      //const sheet = dataFile.Sheets[sheet_name];
+      //const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+      return dataFile[id_test_data].slice(0, n_input);
+    }
+
+    function getYGT(id_test_data) {
+      //const sheet = dataFile.Sheets[sheet_name];
+      //const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+      return dataFile[id_test_data].slice(-n_output);
+    }
+
+    async function testSingleDataReturnLoss(model, X_tensor, y_true) {
+      const inputTensor = tf.tensor2d([X_tensor]);
+      const yTrueTensor = tf.tensor2d([y_true]);
+
+      const predictions = model.predict(inputTensor);
+      const mse = tf.losses.meanSquaredError(yTrueTensor, predictions).dataSync()[0];
+
+      inputTensor.dispose();
+      yTrueTensor.dispose();
+      predictions.dispose();
+
+      return mse;
+    }
+
+    async function testSingleDataReturnPred(model, singleDataTest) {
+      const inputTensor = tf.tensor2d([singleDataTest]);
+      const prediction = model.predict(inputTensor);
+      const predictedValues = prediction.dataSync();
+
+      inputTensor.dispose();
+      prediction.dispose();
+
+      return Array.from(predictedValues);
+    }
+
+    function getTopKValuesAndIndices(predictions, topk) {
+      const predictionTensor = tf.tensor1d(predictions);
+      const { values, indices } = tf.topk(predictionTensor, topk);
+
+      const topValues = values.arraySync();
+      const topIndices = indices.arraySync();
+
+      predictionTensor.dispose();
+      values.dispose();
+      indices.dispose();
+
+      return { topValues, topIndices };
+    }
+
+    /*function getTopKColumns(predictions, topk) {
+      const sheet = dataFile.Sheets[sheet_name];
+      const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+      
+      const outputColumnNames = jsonData[0].slice(-n_output);
+
+      const { topValues, topIndices } = getTopKValuesAndIndices(predictions, topk);
+      const topColumnNames = topIndices.map(index => outputColumnNames[index]);
+
+      return { topValues, topIndices, topColumnNames };
+    }*/
+
+    function getTopKColumns(predictions, topk) {
+      // Use dataFile directly as it now contains the data from "CombinedSheet"
+      const outputColumnNames = dataFile[0].slice(-n_output);  // Get the output column names from the last n_output columns
+
+      const { topValues, topIndices } = getTopKValuesAndIndices(predictions, topk);
+      const topColumnNames = topIndices.map(index => outputColumnNames[index]);
+
+      return { topValues, topIndices, topColumnNames };
+    }
+
+
+    /*async function runTestData(id_test_data) {
+      await loadModelFromJSON(modelPath);
+
+      //const testData = getDataTest(id_test_data);
+      const testData = data_test;
+      //const id_test_data_to = 1
+      //const yTrueTestData = getYGT(id_test_data_to);
+
+      document.getElementById('output').innerText = `Data Uji: ${JSON.stringify(testData)}
+      Panjang fitur input = ${testData.length}\n`;
+
+      const hasilPred = await testSingleDataReturnPred(model, testData);
+      document.getElementById('output').innerText += `Hasil Regresi: ${JSON.stringify(hasilPred)}
+      Panjang dim Hasil Regresi: ${hasilPred.length}\n\n`;
+
+      const topk = 2;
+      const { topValues, topIndices, topColumnNames } = getTopKColumns(hasilPred, topk);
+      document.getElementById('output').innerText += `Top Values: ${JSON.stringify(topValues)}
+      Top Indices: ${JSON.stringify(topIndices)}
+      Top Column Names: ${JSON.stringify(topColumnNames)}\n\n`;
+
+      //const nilaiLoss = await testSingleDataReturnLoss(model, testData, yTrueTestData);
+      //document.getElementById('output').innerText += `Hasil nilai loss: ${nilaiLoss}\n`;
+    }*/
+    async function runTestData(data_test) {
+      await loadModelFromJSON(modelPath);
+
+      // Display test data and its length
+      document.getElementById('output').innerText = `Data Uji: ${JSON.stringify(data_test)}
+      Panjang fitur input = ${data_test.length}\n`;
+
+      // Get prediction results
+      const hasilPred = await testSingleDataReturnPred(model, data_test);
+      document.getElementById('output').innerText += `Hasil Regresi: ${JSON.stringify(hasilPred)}
+      Panjang dim Hasil Regresi: ${hasilPred.length}\n\n`;
+
+      // Extract top-k values and indices
+      const topk = 2;
+      const { topValues, topIndices, topColumnNames } = getTopKColumns(hasilPred, topk);
+      document.getElementById('output').innerText += `Top Values: ${JSON.stringify(topValues)}
+      Top Indices: ${JSON.stringify(topIndices)}
+      Top Column Names: ${JSON.stringify(topColumnNames)}\n\n`;
+
+      // Uncomment the following lines if loss calculation is needed in the future
+      // const nilaiLoss = await testSingleDataReturnLoss(model, data_test, yTrueTestData);
+      // document.getElementById('output').innerText += `Hasil nilai loss: ${nilaiLoss}\n`;
+    }
+
+  </script>
+</body>
+</html>
