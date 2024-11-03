@@ -1,108 +1,46 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Test and Model Evaluation</title>
-  <style>
-    /* Basic styling for layout */
-    body {
-      font-family: Arial, sans-serif;
-      padding: 10px;
-      margin: 0;
-    }
-    h1 {
-      text-align: center;
-    }
-    .checkbox-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .checkbox-group {
-      flex: 1 1 200px;
-      min-width: 200px;
-      background-color: #f9f9f9;
-      padding: 10px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .checkbox-group label {
-      display: block;
-      margin: 5px 0;
-    }
-
-    /* Container and output styling */
-    /* Container and output styling */
-    .output-container {
-      display: flex;
-      flex-wrap: wrap; /* Enables wrapping */
-      gap: 15px;
-      margin-top: 20px;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      background-color: #f7f9fc;
-    }
-    .output-container pre {
-      flex: 1 1 250px; /* Allows elements to grow and shrink while maintaining a minimum width */
-      min-width: 200px;
-      padding: 15px;
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      overflow: auto;
-    }
-    
-    /* Responsive styles */
-    @media (max-width: 768px) {
-      .output-container {
-        flex-direction: column;
-      }
-    }
-  </style>
+  <title>Data Test and Model Evaluation in JavaScript</title>
 </head>
-
 <body>
   <h1>Data Test (Select Symptoms) and Model Evaluation</h1>
 
-  <!-- Symptom Checklist Container -->
-  <div class="checkbox-container">
-    <div class="checkbox-group">
-      <label><input type="checkbox" id="checkbox1" onclick="updateDataTest()"> Migraine</label>
-      <label style="margin-left: 20px;"><input type="checkbox" id="checkbox1_1" onclick="updateDataTest()"> Sakit kepala berdenyut di satu sisi</label>
+  <!-- Symptom Checklist -->
+  <div>
+    <label><input type="checkbox" id="checkbox1" onclick="updateDataTest()"> Migraine</label>
+    <div style="margin-left: 20px;">
+      <label><input type="checkbox" id="checkbox1_1" onclick="updateDataTest()"> Sakit kepala berdenyut di satu sisi</label>
     </div>
-    <div class="checkbox-group">
-      <label><input type="checkbox" id="checkbox2" onclick="updateDataTest()"> Vertigo</label>
-      <label style="margin-left: 20px;"><input type="checkbox" id="checkbox2_1" onclick="updateDataTest()"> Pusing berputar</label>
-      <label style="margin-left: 20px;"><input type="checkbox" id="checkbox2_2" onclick="updateDataTest()"> Kehilangan keseimbangan</label>
+
+    <label><input type="checkbox" id="checkbox2" onclick="updateDataTest()"> Vertigo</label>
+    <div style="margin-left: 20px;">
+      <label><input type="checkbox" id="checkbox2_1" onclick="updateDataTest()"> Pusing berputar</label>
+      <label><input type="checkbox" id="checkbox2_2" onclick="updateDataTest()"> Kehilangan keseimbangan</label>
     </div>
-    <div class="checkbox-group">
-      <label><input type="checkbox" id="checkbox3" onclick="updateDataTest()"> Sariawan (di mulut/lidah)</label>
-      <label style="margin-left: 20px;"><input type="checkbox" id="checkbox3_1" onclick="updateDataTest()"> Luka kecil pada mulut/lidah</label>
-      <label style="margin-left: 20px;"><input type="checkbox" id="checkbox3_2" onclick="updateDataTest()"> Nyeri di sekitar mulut/lidah/pipi/kepala</label>
+
+    <label><input type="checkbox" id="checkbox3" onclick="updateDataTest()"> Sariawan (di mulut/lidah)</label>
+    <div style="margin-left: 20px;">
+      <label><input type="checkbox" id="checkbox3_1" onclick="updateDataTest()"> Luka kecil pada mulut/lidah</label>
+      <label><input type="checkbox" id="checkbox3_2" onclick="updateDataTest()"> Nyeri di sekitar mulut/lidah/pipi/kepala</label>
     </div>
-    <div class="checkbox-group">
-      <label><input type="checkbox" id="checkbox4" onclick="updateDataTest()"> Sakit Gigi</label>
-      <label style="margin-left: 20px;"><input type="checkbox" id="checkbox4_1" onclick="updateDataTest()"> Nyeri di gigi atau gusi</label>
+
+    <label><input type="checkbox" id="checkbox4" onclick="updateDataTest()"> Sakit Gigi</label>
+    <div style="margin-left: 20px;">
+      <label><input type="checkbox" id="checkbox4_1" onclick="updateDataTest()"> Nyeri di gigi atau gusi</label>
     </div>
-    <div class="checkbox-group">
-      <label><input type="checkbox" id="checkbox5" onclick="updateDataTest()"> Radang Tenggorokan</label>
-      <label style="margin-left: 20px;"><input type="checkbox" id="checkbox5_1" onclick="updateDataTest()"> Nyeri tenggorokan</label>
-      <label style="margin-left: 20px;"><input type="checkbox" id="checkbox5_2" onclick="updateDataTest()"> Batuk</label>
-      <label style="margin-left: 20px;"><input type="checkbox" id="checkbox5_3" onclick="updateDataTest()"> Suara serak</label>
+
+    <label><input type="checkbox" id="checkbox5" onclick="updateDataTest()"> Radang Tenggorokan</label>
+    <div style="margin-left: 20px;">
+      <label><input type="checkbox" id="checkbox5_1" onclick="updateDataTest()"> Nyeri tenggorokan</label>
+      <label><input type="checkbox" id="checkbox5_2" onclick="updateDataTest()"> Batuk</label>
+      <label><input type="checkbox" id="checkbox5_3" onclick="updateDataTest()"> Suara serak</label>
     </div>
   </div>
 
-  <button onclick="runTestData(data_test)">Run Test Data</button>
-
-  <!-- Output Containers -->
-  <div class="output-container">
-    <pre id="input_data_test"></pre>
-    <pre id="output"></pre>
-    <pre id="final_output"></pre>
-  </div>
+  <pre id="input_data_test"></pre>
 
   <script>
     const n_input = 14;
@@ -137,6 +75,10 @@
 
     }
   </script>
+
+  <button onclick="runTestData(data_test)">Run Test Data</button>
+  <pre id="output"></pre>
+  <pre id="final_output"></pre>
 
   <script>
 

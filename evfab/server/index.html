@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Test and Model Evaluation in JavaScript</title>
+</head>
+<body>
+  <h1>Data Test (Select Symptoms) and Model Evaluation</h1>
+
+  <!-- Symptom Checklist -->
+  <div>
+    <label><input type="checkbox" id="checkbox1" onclick="updateDataTest()"> Migraine</label>
+    <div style="margin-left: 20px;">
+      <label><input type="checkbox" id="checkbox1_1" onclick="updateDataTest()"> Sakit kepala berdenyut di satu sisi</label>
+    </div>
+
+    <label><input type="checkbox" id="checkbox2" onclick="updateDataTest()"> Vertigo</label>
+    <div style="margin-left: 20px;">
+      <label><input type="checkbox" id="checkbox2_1" onclick="updateDataTest()"> Pusing berputar</label>
+      <label><input type="checkbox" id="checkbox2_2" onclick="updateDataTest()"> Kehilangan keseimbangan</label>
+    </div>
+
+    <label><input type="checkbox" id="checkbox3" onclick="updateDataTest()"> Sariawan (di mulut/lidah)</label>
+    <div style="margin-left: 20px;">
+      <label><input type="checkbox" id="checkbox3_1" onclick="updateDataTest()"> Luka kecil pada mulut/lidah</label>
+      <label><input type="checkbox" id="checkbox3_2" onclick="updateDataTest()"> Nyeri di sekitar mulut/lidah/pipi/kepala</label>
+    </div>
+
+    <label><input type="checkbox" id="checkbox4" onclick="updateDataTest()"> Sakit Gigi</label>
+    <div style="margin-left: 20px;">
+      <label><input type="checkbox" id="checkbox4_1" onclick="updateDataTest()"> Nyeri di gigi atau gusi</label>
+    </div>
+
+    <label><input type="checkbox" id="checkbox5" onclick="updateDataTest()"> Radang Tenggorokan</label>
+    <div style="margin-left: 20px;">
+      <label><input type="checkbox" id="checkbox5_1" onclick="updateDataTest()"> Nyeri tenggorokan</label>
+      <label><input type="checkbox" id="checkbox5_2" onclick="updateDataTest()"> Batuk</label>
+      <label><input type="checkbox" id="checkbox5_3" onclick="updateDataTest()"> Suara serak</label>
+    </div>
+  </div>
+
+  <pre id="input_data_test"></pre>
+
+  <script>
+    const n_input = 14;
+    let data_test = new Array(n_input).fill(0);
+
+    function updateDataTest() {
+      data_test[0] = document.getElementById('checkbox1').checked ? 1 : 0;
+      data_test[1] = document.getElementById('checkbox1_1').checked ? 1 : 0;
+      data_test[2] = document.getElementById('checkbox2').checked ? 1 : 0;
+      data_test[3] = document.getElementById('checkbox2_1').checked ? 1 : 0;
+      data_test[4] = document.getElementById('checkbox2_2').checked ? 1 : 0;
+      data_test[5] = document.getElementById('checkbox3').checked ? 1 : 0;
+      data_test[6] = document.getElementById('checkbox3_1').checked ? 1 : 0;
+      data_test[7] = document.getElementById('checkbox3_2').checked ? 1 : 0;
+      data_test[8] = document.getElementById('checkbox4').checked ? 1 : 0;
+      data_test[9] = document.getElementById('checkbox4_1').checked ? 1 : 0;
+      data_test[10] = document.getElementById('checkbox5').checked ? 1 : 0;
+      data_test[11] = document.getElementById('checkbox5_1').checked ? 1 : 0;
+      data_test[12] = document.getElementById('checkbox5_2').checked ? 1 : 0;
+      data_test[13] = document.getElementById('checkbox5_3').checked ? 1 : 0;
+
+      document.getElementById('input_data_test').innerText = `data_test: ${JSON.stringify(data_test)}`;
+    }
+  </script>
+
+  <button onclick="runTestData(data_test)">Run Test Data</button>
+  <pre id="output"></pre>
+
+  <script>
+    // Model structure
+    class ModelForSyntheticReptile {
+        constructor(n_input = 14, n_hidden1 = 100, n_hidden2 = 50, n_hidden3 = 25, n_output = 44) {
+            this.hidden1 = { weight: [], bias: [] };
+            this.hidden2 = { weight: [], bias: [] };
+            this.hidden3 = { weight: [], bias: [] };
+            this.output = { weight: [], bias: [] };
+        }
+
+        forward(x) {
+            x = this.applyLayer(x, this.hidden1, tanh);
+            x = this.applyLayer(x, this.hidden2, tanh);
+            x = this.applyLayer(x, this.hidden3, tanh);
+            x = this.applyLayer(x, this.output, (x) => x); // No activation on output
+            return x;
+        }
+
+        applyLayer(input, layer, activationFn) {
+            let z = matMul(input, layer.weight);
+            z = addBias(z, layer.bias);
+            return z.map(activationFn);
+        }
+    }
+
+    // Helper functions
+    function matMul(vec, weights) {
+        return weights.map(row => row.reduce((sum, weight, i) => sum + weight * vec[i], 0));
+    }
+
+    function addBias(vec, bias) {
+        return vec.map((v, i) => v + bias[i]);
+    }
+
+    function tanh(x) {
+        return Math.tanh(x);
+    }
+
+    async function loadModelElmReptileFromJson(filepath, model) {
+        try {
+            const response = await fetch(filepath);
+            const weights = await response.json();
+
+            model.hidden1.weight = weights.hidden1.weight;
+            model.hidden1.bias = weights.hidden1.bias;
+            model.hidden2.weight = weights.hidden2.weight;
+            model.hidden2.bias = weights.hidden2.bias;
+            model.hidden3.weight = weights.hidden3.weight;
+            model.hidden3.bias = weights.hidden3.bias;
+            model.output.weight = weights.output.weight;
+            model.output.bias = weights.output.bias;
+        } catch (error) {
+            console.error("Error loading model weights:", error);
+        }
+    }
+
+    function testSingleDataReturnPred(model, singleDataTest) {
+        return model.forward(singleDataTest);
+    }
+
+    // Run test data
+    async function runTestData(data_test) {
+      const model = new ModelForSyntheticReptile();
+      await loadModelElmReptileFromJson('model_reg/model_reptile_Comb-KMT-Tiny-Reg.json', model);
+
+      document.getElementById('output').innerText = `Data Uji: ${JSON.stringify(data_test)}\n`;
+      const hasilPred = testSingleDataReturnPred(model, data_test);
+      document.getElementById('output').innerText += `Hasil Regresi: ${JSON.stringify(hasilPred)}\n\n`;
+    }
+  </script>
+</body>
+</html>

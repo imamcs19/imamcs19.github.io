@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Test and Model Evaluation</title>
+  <title>Data Test and Model Evaluation in JavaScript</title>
   <style>
     /* Basic styling for layout */
     body {
@@ -32,38 +31,17 @@
       display: block;
       margin: 5px 0;
     }
-
-    /* Container and output styling */
-    /* Container and output styling */
     .output-container {
-      display: flex;
-      flex-wrap: wrap; /* Enables wrapping */
-      gap: 15px;
       margin-top: 20px;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      background-color: #f7f9fc;
     }
-    .output-container pre {
-      flex: 1 1 250px; /* Allows elements to grow and shrink while maintaining a minimum width */
-      min-width: 200px;
-      padding: 15px;
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      overflow: auto;
-    }
-    
     /* Responsive styles */
-    @media (max-width: 768px) {
-      .output-container {
-        flex-direction: column;
+    @media (max-width: 600px) {
+      .checkbox-group {
+        flex: 1 1 100%;
       }
     }
   </style>
 </head>
-
 <body>
   <h1>Data Test (Select Symptoms) and Model Evaluation</h1>
 
