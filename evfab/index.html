@@ -54,7 +54,7 @@
       border-radius: 5px;
       overflow: auto;
     }
-    
+
     /* Responsive styles */
     @media (max-width: 768px) {
       .output-container {
@@ -95,7 +95,7 @@
     </div>
   </div>
 
-  <button onclick="runTestData(data_test)">Run Test Data</button>
+  <button id="runTestButton" onclick="runTestData(data_test)" disabled>Run Test Data</button>
 
   <!-- Output Containers -->
   <div class="output-container">
@@ -126,6 +126,17 @@
       data_test[13] = document.getElementById('checkbox5_3').checked ? 1 : 0;
 
       document.getElementById('input_data_test').innerText = `data_test: ${JSON.stringify(data_test)}`;
+
+      // Enable or disable the button based on checked checkboxes
+      const hasCheckedCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]')).some(checkbox => checkbox.checked);
+      document.getElementById('runTestButton').disabled = !hasCheckedCheckboxes;
+
+      // Clear output if no checkboxes are checked
+      if (!hasCheckedCheckboxes) {
+        document.getElementById('input_data_test').innerText = '';
+        document.getElementById('output').innerText = '';
+        document.getElementById('final_output').innerText = '';
+      }
 
       // Calculate topk based on checked groups
       topk = 10;
