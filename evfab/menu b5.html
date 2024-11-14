@@ -61,12 +61,6 @@
             height: 50px;
         }
 
-        .icon-label {
-            color: #ffffff;
-            font-size: 14px;
-            text-align: center;
-        }
-
         /* Animation */
         @keyframes float {
             0%, 100% {
@@ -152,21 +146,15 @@
 <canvas id="particleCanvas"></canvas>
 
 <div class="launcher">
-    <!-- Icon 1 with label "evfab" -->
-    <div class="icon-container">
-        <a href="#" class="icon" onclick="openPopup(event)">
-            <img src="img/medis.png" alt="Heart Icon">
-        </a>
-        <div class="icon-label">evfab</div>
-    </div>
+    <!-- Heart Icon -->
+    <a href="#" class="icon" onclick="openPopup(event)">
+        <img src="img/medis.png" alt="Heart Icon">
+    </a>
     
-    <!-- Icon 2 with label "about" -->
-    <div class="icon-container">
-        <a href="#" class="icon" onclick="openPopup(event)">
-            <img src="img/about.png" alt="Moon Icon">
-        </a>
-        <div class="icon-label">about</div>
-    </div>
+    <!-- Moon Icon -->
+    <a href="#" class="icon" onclick="openPopup(event)">
+        <img src="img/medis.png" alt="Moon Icon">
+    </a>
 </div>
 
 <!-- Overlay for Popup -->
@@ -175,7 +163,7 @@
 <!-- Popup Window -->
 <div class="popup" id="popup">
     <button class="popup-close" onclick="closePopup()">Close</button>
-    <iframe src="app.html" id="popupFrame"></iframe>
+    <iframe src="index.html" id="popupFrame"></iframe>
 </div>
 
 <script>
